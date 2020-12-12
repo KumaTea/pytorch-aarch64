@@ -24,11 +24,33 @@ If you want a specific version, please check the [Corresponding Versions](#Corre
 
 ## Custom PyTorch Builds
 
+| ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
+| :---: | :---: | :---: | :---: | :---: |
+| 1.7.0 | | | | |
+| 1.7.1 | | | | |
+| 1.8.0 | | | | |
+
 ### `torchvision`
-* All wheels will be built in the same Python version as `torch`.
+* All wheels will be built with the [Corresponding `torch` Versions](#Corresponding Versions).
+
+| ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0.7.0 | 1.6.0 | | | | |
+| 0.8.0 | 1.7.0 | | | | |
+| 0.8.1 | 1.7.0 | | | | |
+| 0.8.2 | 1.7.1 | | | | |
+| master | master | | | | |
+
 
 ### `torchaudio`
-* All wheels will be built in the same Python version as `torch`.
+* All wheels will be built with the [Corresponding `torch` Versions](#Corresponding Versions).
+
+| ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0.6.0 | 1.6.0 | | | | |
+| 0.7.0 | 1.7.0 | | | | |
+| 0.7.0 | 1.7.1 | | | | |
+| master | master | | | | |
 
 ---
 
