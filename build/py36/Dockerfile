@@ -19,7 +19,7 @@ RUN set -xe \
         && cd /root \
         && rm -rf /root/Python-3.6.12 \
         && python3.6 -m pip install -U pip setuptools wheel \
-        && python3.6 -m pip install -U dataclasses future numpy pillow requests six typing_extensions \
+        && python3.6 -m pip install -U dataclasses future ninja numpy pillow pyyaml requests six typing_extensions \
         && rm -rf /root/.cache/*
 
 # COPY . .
