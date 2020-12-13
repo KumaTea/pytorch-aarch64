@@ -8,7 +8,7 @@ Run:
 `pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/torch.html`
 
 Note: this command installs the latest version.
-If you want a specific version, please check the [Corresponding Versions](#Corresponding Versions) section.
+If you want a specific version, please check the [Corresponding Versions](#corresponding-versions) section.
 
 ## Official PyTorch CI Builds
 
@@ -31,7 +31,7 @@ If you want a specific version, please check the [Corresponding Versions](#Corre
 | 1.8.0 | | | | |
 
 ### `torchvision`
-* All wheels will be built with the [Corresponding `torch` Versions](#Corresponding Versions).
+* All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
 
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -43,7 +43,7 @@ If you want a specific version, please check the [Corresponding Versions](#Corre
 
 
 ### `torchaudio`
-* All wheels will be built with the [Corresponding `torch` Versions](#Corresponding Versions).
+* All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
 
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
