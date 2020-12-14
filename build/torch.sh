@@ -1,6 +1,9 @@
 #!/bin/bash
 
+set -xe
+
 VER="1.7.1"
+export PYTORCH_BUILD_VERSION="$VER"
 
 cd ~
 mkdir pytorch || :
@@ -17,11 +20,11 @@ git submodule update --init --recursive
 apt install -y build-essential cmake
 # pip install ninja
 
-cp version.txt version.txt.bak
+# cp version.txt version.txt.bak
 # (echo "$VER" | sed 's/v//g') > version.txt
-echo "$VER" > version.txt
+# echo "$VER" > version.txt
 
-# export MAX_JOBS=1
+export MAX_JOBS=1
 export BUILD_TEST=0
 
 python3 setup.py build

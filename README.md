@@ -5,41 +5,45 @@ PyTorch, torchvision and torchaudio wheel for aarch64 / ARM64 devices
 
 Run:
 
-`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/torch.html`
+`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/torch.html # not done yet`
 
 Note: this command installs the latest version.
 If you want a specific version, please check the [Corresponding Versions](#corresponding-versions) section.
+
+If you want to pick the `whl` files manually, check the **[releases](../../releases)**.
+
+## Custom PyTorch Builds
+
+### Click here to [check building status](../../issues/1).
+
+| ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
+| :---: | :---: | :---: | :---: | :---: |
+| 1.8.0 | | | | |
+| 1.7.1 | | | | |
+| 1.7.0 | | | | |
 
 ## Official PyTorch CI Builds
 
 | ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
-| 1.4.0 | [![Build Status][1]][2] | | | |
-| 1.5.0 | [![Build Status][3]][4] | | | |
-| 1.6.0 | [![Build Status][5]][6] | | | |
-| 1.7.0 | | | | |
-| 1.7.1 | | | | |
-| 1.8.0 | | | | |
 | master | [![Build Status][7]][8] | [![Build Status][9]][10] | [![Build Status][11]][12] | |
-
-## Custom PyTorch Builds
-
-| ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
-| :---: | :---: | :---: | :---: | :---: |
-| 1.7.0 | | | | |
-| 1.7.1 | | | | |
 | 1.8.0 | | | | |
+| 1.7.1 | | | | |
+| 1.7.0 | | | | |
+| 1.6.0 | [![Build Status][5]][6] | | | |
+| 1.5.0 | [![Build Status][3]][4] | | | |
+| 1.4.0 | [![Build Status][1]][2] | | | |
 
 ### `torchvision`
 * All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
 
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 0.7.0 | 1.6.0 | | | | |
-| 0.8.0 | 1.7.0 | | | | |
-| 0.8.1 | 1.7.0 | | | | |
-| 0.8.2 | 1.7.1 | | | | |
 | master | master | | | | |
+| 0.8.2 | 1.7.1 | | | | |
+| 0.8.1 | 1.7.0 | | | | |
+| 0.8.0 | 1.7.0 | | | | |
+| 0.7.0 | 1.6.0 | | | | |
 
 
 ### `torchaudio`
@@ -47,10 +51,10 @@ If you want a specific version, please check the [Corresponding Versions](#corre
 
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 0.6.0 | 1.6.0 | | | | |
-| 0.7.0 | 1.7.0 | | | | |
-| 0.7.0 | 1.7.1 | | | | |
 | master | master | | | | |
+| 0.7.2 | 1.7.1 | | | | |
+| 0.7.0 | 1.7.0 | | | | |
+| 0.6.0 | 1.6.0 | | | | |
 
 ---
 
@@ -61,7 +65,7 @@ If you want a specific version, please check the [Corresponding Versions](#corre
 | `torch` | `torchvision` | `torchaudio` | `python` |
 | :---: | :---: | :---: | :---: |
 | `master` / `nightly` | `master` / `nightly` | `master` / `nightly` | `>=3.6` |
-| `1.7.1` | `0.8.2` | `0.7.0` | `>=3.6` |
+| `1.7.1` | `0.8.2` | `0.7.2` | `>=3.6` |
 | `1.7.0` | `0.8.1` | `0.7.0` | `>=3.6` |
 | `1.7.0` | `0.8.0` | `0.7.0` | `>=3.6` |
 | `1.6.0` | `0.7.0` | `0.6.0` | `>=3.6` |
@@ -92,3 +96,11 @@ If you want a specific version, please check the [Corresponding Versions](#corre
 ---
 
 ### Environment
+
+> SoC: [Allwinner H6](https://linux-sunxi.org/H6) (quad-core A53)
+> 
+> Architecture: ARMv8 / ARM64 / `aarch64`
+> 
+> OS: Ubuntu 20.04.1 focal LTS
+> 
+> Virtualization: **Docker**
