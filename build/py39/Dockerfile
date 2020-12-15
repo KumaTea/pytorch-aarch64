@@ -6,17 +6,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -xe \
         \
         && echo "cd /root" >> /root/.bashrc \
-        && cd /root \
         && apt update \
-        && apt install -y bash build-essential ca-certificates cmake curl git libffi-dev libssl-dev nano screen wget xz-utils zlib1g-dev
+        && apt install -y bash build-essential ca-certificates cmake curl git libffi-dev libssl-dev nano wget xz-utils zlib1g-dev
 
 RUN set -xe \
         \
+        && cd /root \
         && wget -q https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz -O /root/py39.tar.xz \
         && tar -xJf /root/py39.tar.xz \
         && rm /root/py39.tar.xz \
         && cd /root/Python-3.9.1 \
-        && ./configure \
+        && ./configure --enable-optimizations \
         && make \
         && make install \
         && cd /root \

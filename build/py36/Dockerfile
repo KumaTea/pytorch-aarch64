@@ -6,17 +6,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -xe \
         \
         && echo "cd /root" >> /root/.bashrc \
-        && cd /root \
         && apt update \
-        && apt install -y bash build-essential ca-certificates cmake curl git libjpeg-dev libpng-dev libssl-dev nano screen wget xz-utils zlib1g-dev
+        && apt install -y bash build-essential ca-certificates cmake curl git libffi-dev libssl-dev nano wget xz-utils zlib1g-dev
 
 RUN set -xe \
         \
+        && cd /root \
         && wget -q https://www.python.org/ftp/python/3.6.12/Python-3.6.12.tar.xz -O /root/py36.tar.xz \
         && tar -xJf /root/py36.tar.xz \
         && rm /root/py36.tar.xz \
         && cd /root/Python-3.6.12 \
-        && ./configure \
+        && ./configure --enable-optimizations \
         && make \
         && make install \
         && cd /root \
@@ -25,7 +25,7 @@ RUN set -xe \
 RUN set -xe \
         \
         && python3.6 -m pip install -U pip setuptools wheel \
-        && python3.6 -m pip install -U dataclasses future ninja numpy pillow pyyaml requests six typing_extensions \
+        && python3.6 -m pip install -U cffi dataclasses future ninja numpy pillow pyyaml requests six typing_extensions \
         && rm -rf /root/.cache/*
 
 # COPY . .
