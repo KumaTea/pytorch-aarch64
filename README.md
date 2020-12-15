@@ -21,6 +21,8 @@ If you want to pick the `whl` files manually, check the **[releases](../../relea
 | 1.8.0 | | | | |
 | 1.7.1 | | | | |
 | 1.7.0 | | | | |
+| 1.6.0 | | | | |
+| 1.5.0 - | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ## Official PyTorch CI Builds
 
@@ -92,6 +94,7 @@ If you want to pick the `whl` files manually, check the **[releases](../../relea
 [12]: https://torch.maku.ml/api?project=torch&ver=master&py=38
 [13]: https://github.com/pytorch/vision#installation
 [14]: https://github.com/pytorch/audio#dependencies
+[15]: https://img.shields.io/badge/build-canceled-lightgrey
 
 ---
 

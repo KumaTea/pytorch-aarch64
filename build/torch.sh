@@ -4,6 +4,7 @@ set -xe
 
 VER="1.7.1"
 export PYTORCH_BUILD_VERSION="$VER"
+export PYTORCH_BUILD_NUMBER="1"
 
 cd ~
 mkdir pytorch || :
@@ -18,7 +19,7 @@ git submodule sync
 git submodule update --init --recursive
 
 apt install -y build-essential cmake
-# pip install ninja
+pip install ninja
 
 # cp version.txt version.txt.bak
 # (echo "$VER" | sed 's/v//g') > version.txt

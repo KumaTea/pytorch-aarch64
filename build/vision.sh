@@ -18,7 +18,7 @@ git submodule update --init --recursive
 
 apt install -y libjpeg-dev libpng-dev
 # Do not install ffmpeg
-# pip install ninja
+pip install ninja
 
 # cp setup.py setup.py.bak
 # (sed "s/version\s=\s\'\(.\+\)/version = \'$VER\'/g" setup.py.bak) > setup.py
