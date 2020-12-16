@@ -16,10 +16,9 @@ RUN set -xe \
         && tar -xJf /root/py37.tar.xz \
         && rm /root/py37.tar.xz \
         && cd /root/Python-3.7.9 \
-        && ./configure --enable-optimizations \
+        && ./configure \
         && make \
         && make install \
-        && cd /root \
         && rm -rf /root/Python-3.7.9
 
 RUN set -xe \

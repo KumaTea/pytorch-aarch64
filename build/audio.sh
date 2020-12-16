@@ -16,6 +16,7 @@ git checkout "v$VER"
 git submodule sync
 git submodule update --init --recursive
 
+apt update
 apt install -y sox libsox-dev
 pip install ninja
 

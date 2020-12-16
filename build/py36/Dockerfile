@@ -16,10 +16,9 @@ RUN set -xe \
         && tar -xJf /root/py36.tar.xz \
         && rm /root/py36.tar.xz \
         && cd /root/Python-3.6.12 \
-        && ./configure --enable-optimizations \
+        && ./configure \
         && make \
         && make install \
-        && cd /root \
         && rm -rf /root/Python-3.6.12
 
 RUN set -xe \

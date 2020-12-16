@@ -16,10 +16,9 @@ RUN set -xe \
         && tar -xJf /root/py39.tar.xz \
         && rm /root/py39.tar.xz \
         && cd /root/Python-3.9.1 \
-        && ./configure --enable-optimizations \
+        && ./configure \
         && make \
         && make install \
-        && cd /root \
         && rm -rf /root/Python-3.9.1
 
 RUN set -xe \
