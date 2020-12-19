@@ -1,4 +1,4 @@
-import os
+from os.path import basename
 import requests
 from urllib.parse import quote_plus, urlparse
 
@@ -16,6 +16,7 @@ gh_rl_api = f'https://api.github.com/repos/{author}/{project}/releases'
 
 
 def get_pt_ci():
+    print('Fetching PyTorch CI builds...')
     assets = []
     jobs = []
     result_raw = requests.get(pt_ci_api).json()
@@ -23,13 +24,14 @@ def get_pt_ci():
         if release['job_name'] not in jobs and release['result'] == 'SUCCESS':
             jobs.append(release['job_name'])
             assets.append({
-                'name': os.path.basename(urlparse(release['artifacts'][0]['url']).path),
+                'name': basename(urlparse(release['artifacts'][0]['url']).path),
                 'url': release['artifacts'][0]['url']
             })
     return assets
 
 
 def get_gh_rl():
+    print('Fetching GitHub releases...')
     assets = []
     result_raw = requests.get(gh_rl_api).json()
     for release in result_raw:
@@ -45,6 +47,7 @@ def get_gh_rl():
 def gen_index():
     rl_list = get_gh_rl()
     ci_list = get_pt_ci()
+    print('Generating html...')
     rl_html = ''
     ci_html = ''
     for file in rl_list:

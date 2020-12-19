@@ -1,5 +1,5 @@
 # pytorch-aarch64
-PyTorch, torchvision and torchaudio wheel for aarch64 / ARM64 devices
+[PyTorch][20], [torchvision][21] and [torchaudio][22] wheel for aarch64 / ARM64 devices
 
 ## Install
 
@@ -16,17 +16,17 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 
 ### Click here to [check building status][17].
 
-| ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
+| py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
 | 1.8.0 | | | | |
-| 1.7.1 | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] |
-| 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![success][2]][12] | [![pending][4]][12] |
+| 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
+| 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
 | 1.5.0 - | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ## Official PyTorch CI Builds
 
-| ver \ py | 3.6 | 3.7 | 3.8 | 3.9 |
+| py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
 | master | [![Build Status][7]][19] | [![Build Status][9]][19] | [![Build Status][11]][19] | |
 | 1.8.0 | | | | |
@@ -42,8 +42,8 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | master | master | | | | |
-| 0.8.2 | 1.7.1 | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] |
-| 0.8.0 / 0.8.1 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![success][2]][12] | [![pending][4]][12] |
+| 0.8.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
+| 0.8.0 / 0.8.1 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
 | 0.7.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
 
 ### `torchaudio`
@@ -52,8 +52,8 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | master | master | | | | |
-| 0.7.2 | 1.7.1 | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] | [![success][2]][18] |
-| 0.7.0 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![success][2]][12] | [![pending][4]][12] |
+| 0.7.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
+| 0.7.0 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
 | 0.6.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
 
 ---
@@ -78,7 +78,7 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | `<=1.0.1` | `0.2.2` | | `==2.7`, `>=3.5`, `<=3.7` |
 
 [1]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.4.0
-[2]: https://img.shields.io/badge/build-success-brightgreen
+[2]: https://img.shields.io/badge/build-passing-brightgreen
 [3]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.5.0
 [4]: https://img.shields.io/badge/build-pending-yellow
 [5]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.6.0
@@ -96,10 +96,13 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 [17]: https://github.com/KumaTea/pytorch-aarch64/issues/1
 [18]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.7.1
 [19]: https://status.openlabtesting.org/builds/builds?project=pytorch%2Fpytorch
+[20]: https://github.com/pytorch/pytorch
+[21]: https://github.com/pytorch/vision
+[22]: https://github.com/pytorch/audio
 
 ---
 
-### Environment
+### Building Environment
 
 > SoC: [Allwinner H6](https://linux-sunxi.org/H6) (quad-core A53)
 > 
