@@ -1,12 +1,13 @@
+import os
 import requests
-from datetime import datetime
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlparse
 
 
 author = 'KumaTea'
 project = 'pytorch-aarch64'
 whl_dir = '../whl'
-whl_file = 'stable.html'
+rl_file = 'stable.html'
+ci_file = 'ci.html'
 pt = 'pytorch'
 pt_ci_index = './pt_ci.json'  # pytorch official CI builds
 gh_rl_index = './gh_rl.json'  # GitHub released wheels
@@ -15,9 +16,17 @@ gh_rl_api = f'https://api.github.com/repos/{author}/{project}/releases'
 
 
 def get_pt_ci():
+    assets = []
+    jobs = []
     result_raw = requests.get(pt_ci_api).json()
-    # (datetime.utcnow() - datetime.strptime('2020-12-15T00:32:07', '%Y-%m-%dT%H:%M:%S')).days
-    pass
+    for release in result_raw:
+        if release['job_name'] not in jobs and release['result'] == 'SUCCESS':
+            jobs.append(release['job_name'])
+            assets.append({
+                'name': os.path.basename(urlparse(release['artifacts'][0]['url']).path),
+                'url': release['artifacts'][0]['url']
+            })
+    return assets
 
 
 def get_gh_rl():
@@ -34,18 +43,17 @@ def get_gh_rl():
 
 
 def gen_index():
-    whl_list = get_gh_rl()
-    html = ''
-    for file in whl_list:
-        html += '<a href=\"' + file['url'] + '\">' + \
-                quote_plus(file['name']) + '</a><br>\n'
-    with open(f'{whl_dir}/{whl_file}', 'w', encoding='utf-8') as html_file:
-        html_file.write(html)
-
-
-def get_status():
-    pass
-
-
-def get_wheel():
-    pass
+    rl_list = get_gh_rl()
+    ci_list = get_pt_ci()
+    rl_html = ''
+    ci_html = ''
+    for file in rl_list:
+        rl_html += '<a href=\"' + file['url'] + '\">' + \
+                   quote_plus(file['name']) + '</a><br>\n'
+    with open(f'{whl_dir}/{rl_file}', 'w', encoding='utf-8') as html_file:
+        html_file.write(rl_html)
+    for file in ci_list:
+        ci_html += '<a href=\"' + file['url'] + '\">' + \
+                   quote_plus(file['name']) + '</a><br>\n'
+    with open(f'{whl_dir}/{ci_file}', 'w', encoding='utf-8') as html_file:
+        html_file.write(ci_html)
