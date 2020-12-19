@@ -37,8 +37,8 @@ def gen_index():
     whl_list = get_gh_rl()
     html = ''
     for file in whl_list:
-        html += '<a href=\"' + quote_plus(file['name']) + '\"</a>' + \
-                quote_plus(file['url']) + '<br>\n'
+        html += '<a href=\"' + file['url'] + '\">' + \
+                quote_plus(file['name']) + '</a><br>\n'
     with open(f'{whl_dir}/{whl_file}', 'w', encoding='utf-8') as html_file:
         html_file.write(html)
 
