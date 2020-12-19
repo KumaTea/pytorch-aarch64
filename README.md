@@ -5,7 +5,7 @@ PyTorch, torchvision and torchaudio wheel for aarch64 / ARM64 devices
 
 Run:
 
-`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/torch.html # not done yet`
+`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/stable.html`
 
 Note: this command installs the latest version.
 If you want a specific version, please check the [Corresponding Versions](#corresponding-versions) section.
