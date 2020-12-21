@@ -20,9 +20,9 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | :---: | :---: | :---: | :---: | :---: |
 | 1.8.0 | | | | |
 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
-| 1.5.0 - | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
+| 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
+| 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ## Official PyTorch CI Builds
 
@@ -43,8 +43,9 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | master | master | | | | |
 | 0.8.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 0.8.0 / 0.8.1 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.7.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
+| 0.8.0 / 0.8.1 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
+| 0.7.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| <= 0.6.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ### `torchaudio`
 * All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
@@ -53,8 +54,9 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | master | master | | | | |
 | 0.7.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 0.7.0 | 1.7.0 | [![pending][4]][12] | [![pending][4]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.6.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] | [![pending][4]][10] |
+| 0.7.0 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
+| 0.6.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| <= 0.5.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ---
 
