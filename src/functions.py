@@ -37,10 +37,11 @@ def get_gh_rl():
     for release in result_raw:
         if release['assets']:
             for binary in release['assets']:
-                assets.append({
-                    'name': binary['name'],
-                    'url': binary['browser_download_url']
-                })
+                if 'whl' in binary['name']:
+                    assets.append({
+                        'name': binary['name'],
+                        'url': binary['browser_download_url']
+                    })
     return assets
 
 

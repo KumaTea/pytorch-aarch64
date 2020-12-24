@@ -1,11 +1,11 @@
 # pytorch-aarch64
-[PyTorch][20], [torchvision][21] and [torchaudio][22] wheel for aarch64 / ARM64 devices
+[PyTorch][20], [torchvision][21] and [torchaudio][22] wheels for aarch64 / ARM64 devices
 
 ## Install
 
 Run:
 
-`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/stable.html`
+**`pip install torch torchvision torchaudio -f https://torch.maku.ml/whl/stable.html`**
 
 Note: this command installs the latest version.
 If you want a specific version, please check the [Corresponding Versions](#corresponding-versions) section.
@@ -21,7 +21,7 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | 1.8.0 | | | | |
 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| 1.6.0<a href="#about-version-1.6.0"><sup>[i]</sup></a> | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ## Official PyTorch CI Builds
@@ -44,7 +44,7 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | master | master | | | | |
 | 0.8.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
 | 0.8.0 / 0.8.1 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.7.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| 0.7.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
 | <= 0.6.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ### `torchaudio`
@@ -55,7 +55,7 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | master | master | | | | |
 | 0.7.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
 | 0.7.0 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.6.0 | 1.6.0 | [![pending][4]][10] | [![pending][4]][10] | [![pending][6]][10] | [![pending][6]][10] |
+| 0.6.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
 | <= 0.5.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ---
@@ -79,6 +79,26 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 | `1.1.0` | `0.3.0` | | `==2.7`, `>=3.5`, `<=3.7` |
 | `<=1.0.1` | `0.2.2` | | `==2.7`, `>=3.5`, `<=3.7` |
 
+---
+
+## Appendix
+
+### About Version 1.6.0
+
+A fatal bug is encountered and [this patch][24] is applied while building PyTorch v1.6.0.
+After that, `whl` files can be successfully built under every Python version.
+
+### Building Environment
+
+> SoC: [Allwinner H6][23] (quad-core A53)
+> 
+> Architecture: ARMv8 / ARM64 / `aarch64`
+> 
+> OS: Ubuntu 20.04.1 focal LTS
+> 
+> Virtualization: **Docker**
+
+
 [1]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.4.0
 [2]: https://img.shields.io/badge/build-passing-brightgreen
 [3]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.5.0
@@ -101,15 +121,5 @@ If you want to pick the `whl` files manually, check the **[releases][16]**.
 [20]: https://github.com/pytorch/pytorch
 [21]: https://github.com/pytorch/vision
 [22]: https://github.com/pytorch/audio
-
----
-
-### Building Environment
-
-> SoC: [Allwinner H6](https://linux-sunxi.org/H6) (quad-core A53)
-> 
-> Architecture: ARMv8 / ARM64 / `aarch64`
-> 
-> OS: Ubuntu 20.04.1 focal LTS
-> 
-> Virtualization: **Docker**
+[23]: https://linux-sunxi.org/H6
+[24]: https://github.com/pytorch/pytorch/issues/33124#issuecomment-602048845
