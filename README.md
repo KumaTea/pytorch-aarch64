@@ -28,9 +28,9 @@ Similarly, `fastbook` could be installed by:
 
 `pip install fastbook -f https://torch.maku.ml/whl/stable.html`
 
-## Custom PyTorch Builds
+## Custom Builds
 
-### Click here to [check building status][17].
+### PyTorch
 
 | py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
@@ -60,7 +60,7 @@ Similarly, `fastbook` could be installed by:
 | 0.6.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
 | <= 0.5.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
-### `torchtext` <a href="#about-pytorch-v160"><sup>[i]</sup></a>
+### `torchtext` <a href="#about-torchtext"><sup>[i]</sup></a>
 * All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
 
 | ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
@@ -115,11 +115,11 @@ After that, `whl` files can be successfully built under every Python version.
 
 ### About TorchText
 
-The latest `torchtext` version you can install from PyPI (`pip`) is [`0.6.0`][30], namely `torchtext-0.6.0-py3-none-any.whl`,
+The latest `torchtext` version you can install from PyPI (`pip`) is [`0.6.0`][17], namely `torchtext-0.6.0-py3-none-any.whl`,
 is the last official version that is available for all devices.
 
-From that on, the newer version are only built for `x86_64` / `arm64`, like other projects.
-But for `torchtext`, `0.6.0` is deprecated but significantly more recent than the dropped versions of other projects.
+From that on, the newer version are only built for `x86_64` / `amd64`, like other projects.
+However, for `torchtext`, version `0.6.0` is deprecated but significantly more recent than the dropped versions of other projects.
 
 ### Building Environment
 
@@ -147,7 +147,7 @@ Test date: 2020-12-25
 
 Note:
 1. This test was done by using a same _Cat or Dog_ model, to predict 10 random animal images (while same for each group).
-2. PyTorch was manually installed the latest version on all platform, but driver and Python remained default.
+2. The latest version of PyTorch was manually installed on all platforms, but driver and Python remained default.
 
 
 [1]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.4.0
@@ -166,7 +166,7 @@ Note:
 [14]: https://github.com/pytorch/audio#dependencies
 [15]: https://img.shields.io/badge/build-canceled-lightgrey
 [16]: https://github.com/KumaTea/pytorch-aarch64/releases
-[17]: https://github.com/KumaTea/pytorch-aarch64/issues/1
+[17]: https://pypi.org/project/torchtext/0.6.0/#files
 [18]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.7.1
 [19]: https://status.openlabtesting.org/builds/builds?project=pytorch%2Fpytorch
 [20]: https://github.com/pytorch/pytorch
@@ -179,4 +179,3 @@ Note:
 [27]: https://www.fast.ai
 [28]: https://github.com/pytorch/text
 [29]: https://github.com/pytorch/text#installation
-[30]: https://pypi.org/project/torchtext/0.6.0/#files

@@ -7,7 +7,8 @@ RUN set -xe \
         \
         && echo "cd /root" >> /root/.bashrc \
         && apt update \
-        && apt install -y bash build-essential ca-certificates cmake curl git libffi-dev libssl-dev nano wget xz-utils zlib1g-dev
+        && apt install -y bash build-essential ca-certificates cmake curl git libffi-dev libssl-dev nano wget xz-utils zlib1g-dev \
+        && rm -rf /var/lib/apt/lists/*
 
 RUN set -xe \
         \

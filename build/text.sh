@@ -2,23 +2,20 @@
 
 set -xe
 
-VER="0.8.2"
+VER="0.8.1"
 export BUILD_VERSION="$VER"
 
 cd ~
 mkdir pytorch || :
 cd pytorch
 
-git clone https://github.com/pytorch/vision
+git clone https://github.com/pytorch/text
 
-cd vision
+cd audio
 git checkout "v$VER"
 git submodule sync
 git submodule update --init --recursive
 
-apt update
-apt install -y libjpeg-dev libpng-dev
-# Do not install ffmpeg
 # pip install ninja
 
 # cp setup.py setup.py.bak

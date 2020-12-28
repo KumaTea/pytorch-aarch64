@@ -18,7 +18,7 @@ git submodule update --init --recursive
 
 apt update
 apt install -y sox libsox-dev
-pip install ninja
+# pip install ninja
 
 # cp setup.py setup.py.bak
 # (sed "s/version\s=\s\'\(.\+\)/version = \'$VER\'/g" setup.py.bak) > setup.py

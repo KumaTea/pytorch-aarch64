@@ -10,17 +10,16 @@ cd ~
 mkdir pytorch || :
 cd pytorch
 
-git clone https://github.com/pytorch/pytorch
-mv pytorch torch
+git clone https://github.com/pytorch/pytorch torch
 
 cd torch
 git checkout "v$VER"
 git submodule sync
 git submodule update --init --recursive
 
-apt update
-apt install -y build-essential cmake
-pip install ninja
+# apt update
+# apt install -y build-essential cmake
+# pip install ninja
 
 # cp version.txt version.txt.bak
 # (echo "$VER" | sed 's/v//g') > version.txt
