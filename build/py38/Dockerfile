@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM debian:buster
 
 ENV DEBIAN_FRONTEND=noninteractive
 # tzdata
@@ -12,11 +12,20 @@ RUN set -xe \
 
 RUN set -xe \
         \
-        && apt update \
-        && apt install -y bash python3-cffi python3-dev python3-future python3-numpy python3-pil python3-pip python3-requests python3-setuptools python3-six python3-wheel python3-yaml \
-        && python3 -m pip install -U pip setuptools wheel \
-        && python3 -m pip install -U dataclasses ninja pyyaml typing_extensions \
-        && rm -rf /var/lib/apt/lists/* \
+        && cd /root \
+        && wget -q https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz -O /root/py38.tar.xz \
+        && tar -xJf /root/py38.tar.xz \
+        && rm /root/py38.tar.xz \
+        && cd /root/Python-3.8.7 \
+        && ./configure \
+        && make \
+        && make install \
+        && rm -rf /root/Python-3.8.7
+
+RUN set -xe \
+        \
+        && python3.8 -m pip install -U pip setuptools wheel \
+        && python3.8 -m pip install -U cffi dataclasses future ninja numpy pillow pyyaml requests six typing_extensions \
         && rm -rf /root/.cache/*
 
 # COPY . .

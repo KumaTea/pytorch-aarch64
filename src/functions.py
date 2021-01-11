@@ -47,17 +47,19 @@ def get_gh_rl():
 
 def gen_index():
     rl_list = get_gh_rl()
-    ci_list = get_pt_ci()
+    # ci_list = get_pt_ci()
     print('Generating html...')
     rl_html = ''
-    ci_html = ''
+    # ci_html = ''
     for file in rl_list:
         rl_html += '<a href=\"' + file['url'] + '\">' + \
                    quote_plus(file['name']) + '</a><br>\n'
     with open(f'{whl_dir}/{rl_file}', 'w', encoding='utf-8') as html_file:
         html_file.write(rl_html)
+    """
     for file in ci_list:
         ci_html += '<a href=\"' + file['url'] + '\">' + \
                    quote_plus(file['name']) + '</a><br>\n'
     with open(f'{whl_dir}/{ci_file}', 'w', encoding='utf-8') as html_file:
         html_file.write(ci_html)
+    """
