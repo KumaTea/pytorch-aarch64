@@ -1,5 +1,7 @@
 # pytorch-aarch64
-[PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels for aarch64 / ARM64 devices
+[PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels (whl) for aarch64 / ARMv8 / ARM64 devices
+
+[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
 
 ## Install
 
@@ -106,7 +108,7 @@ Similarly, `fastbook` could be installed by:
 
 ---
 
-## Appendix
+## Extra Info
 
 ### About PyTorch v1.6.0
 
@@ -120,6 +122,13 @@ is the last official version that is available for all devices.
 
 From that on, the newer version are only built for `x86_64` / `amd64`, like other projects.
 However, for `torchtext`, version `0.6.0` is deprecated but significantly more recent than the dropped versions of other projects.
+
+### CUDA / CUDNN Support
+
+Since the building environment (as below) does not contain an Nvidia GPU,
+the wheels could not be built with cuda support.
+
+If you need it, please use an [Nvidia Jetson][30] board to run the [building code](build/torch.sh).
 
 ### Building Environment
 
@@ -179,3 +188,7 @@ Note:
 [27]: https://www.fast.ai
 [28]: https://github.com/pytorch/text
 [29]: https://github.com/pytorch/text#installation
+[30]: https://developer.nvidia.com/embedded/jetson-developer-kits
+[31]: https://gitee.com/kumatea/pytorch-aarch64
+[32]: https://github.com/KumaTea/pytorch-aarch64
+[33]: https://torch.maku.ml/
