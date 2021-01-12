@@ -16,6 +16,16 @@ For choosing a specific version, please check the [Corresponding Versions](#corr
 
 To pick the `whl` files manually, check the **[releases][16]**.
 
+## Docker
+
+**`docker run -it kumatea/pytorch`**
+
+To pull the image, run `docker pull kumatea/pytorch`.
+
+To check all available tags, [ckick here][34].
+
+> TODO: add `readline` support
+
 ### [FastAI][27]
 
 [FastAI][27] is a great [open-source][25] high-level deep learning framework based on PyTorch.
@@ -192,3 +202,4 @@ Note:
 [31]: https://gitee.com/kumatea/pytorch-aarch64
 [32]: https://github.com/KumaTea/pytorch-aarch64
 [33]: https://torch.maku.ml/
+[34]: https://hub.docker.com/r/kumatea/pytorch

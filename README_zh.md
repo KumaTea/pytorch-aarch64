@@ -16,6 +16,16 @@
 
 如果要手动选择`whl`文件，请查看 **[release][16]** 。
 
+## Docker
+
+**`docker run -it kumatea/pytorch`**
+
+运行 `docker pull kumatea/pytorch` 以拉取镜像。
+
+[点击此处][34] 查看所有版本。
+
+> TODO: add `readline` support
+
 ### [FastAI][27]
 
 [FastAI][27]是一个基于PyTorch的优秀[开源][25]高级深度学习框架。
@@ -115,3 +125,4 @@
 [31]: https://gitee.com/kumatea/pytorch-aarch64
 [32]: https://github.com/KumaTea/pytorch-aarch64
 [33]: https://torch.maku.ml/
+[34]: https://hub.docker.com/r/kumatea/pytorch
