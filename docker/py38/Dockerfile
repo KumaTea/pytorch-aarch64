@@ -1,26 +1,13 @@
-FROM ubuntu:focal
+FROM python:3.8-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 # tzdata
 
 RUN set -xe \
         \
-        && echo "cd /root" >> /root/.bashrc \
         && apt update \
-        && apt install -y bash build-essential ca-certificates curl libffi-dev libssl-dev nano wget xz-utils zlib1g-dev liblzma-dev libjpeg-dev libpng-dev sox libsox-dev\
+        && apt install -y bash ca-certificates libffi-dev libssl-dev xz-utils zlib1g-dev liblzma-dev libjpeg-dev libpng-dev sox libsox-dev \
         && rm -rf /var/lib/apt/lists/*
-
-RUN set -xe \
-        \
-        && cd /root \
-        && wget -q https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz -O /root/py38.tar.xz \
-        && tar -xJf /root/py38.tar.xz \
-        && rm /root/py38.tar.xz \
-        && cd /root/Python-3.8.7 \
-        && ./configure \
-        && make \
-        && make install \
-        && rm -rf /root/Python-3.8.7
 
 RUN set -xe \
         \
