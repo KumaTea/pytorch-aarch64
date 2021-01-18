@@ -22,9 +22,7 @@ To pick the `whl` files manually, check the **[releases][16]**.
 
 To pull the image, run `docker pull kumatea/pytorch`.
 
-To check all available tags, [ckick here][34].
-
-> TODO: add `readline` support
+To check all available tags, [click here][34].
 
 ### [FastAI][27]
 
@@ -146,9 +144,14 @@ If you need it, please use an [Nvidia Jetson][30] board to run the [building cod
 > 
 > Architecture: ARMv8 / ARM64 / `aarch64`
 > 
-> OS: Ubuntu 20.04.1 focal LTS
+> OS: Debian Buster
+> 
+> GCC: v8.3.0
 > 
 > Virtualization: **Docker**
+
+Note: wheels, which version is less or equal to 1.7.0, are built using Ubuntu 20.04.1 Focal LTS.
+It won't run on Debian Buster since the GCC version, v9.3.0, is too new.
 
 ### Performance
 

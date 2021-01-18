@@ -24,8 +24,6 @@
 
 [点击此处][34] 查看所有版本。
 
-> TODO: add `readline` support
-
 ### [FastAI][27]
 
 [FastAI][27]是一个基于PyTorch的优秀[开源][25]高级深度学习框架。
@@ -69,9 +67,12 @@
 > 
 > 架构：ARMv8 / ARM64 / `aarch64` 架构
 > 
-> 操作系统：Ubuntu 20.04.1 focal LTS
+> 操作系统：Debian Buster
 > 
 > 虚拟化：**Docker**
+
+注：版本小于或等于1.7.0的 wheel 二进制文件是使用 Ubuntu 20.04.1 Focal LTS 编译的。
+由于GCC版本太新 (v9.3.0) 不能在 Debian Buster 上运行。
 
 ### 性能
 
