@@ -72,7 +72,7 @@
 > 虚拟化：**Docker**
 
 注：版本小于或等于1.7.0的 wheel 二进制文件是使用 Ubuntu 20.04.1 Focal LTS 编译的。
-由于GCC版本太新 (v9.3.0) 不能在 Debian Buster 上运行。
+由于 GCC 版本太新 (v9.3.0) 不能在 Debian Buster 上运行。
 
 ### 性能
 

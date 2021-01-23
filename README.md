@@ -1,5 +1,6 @@
 # pytorch-aarch64
-[PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels (whl) for aarch64 / ARMv8 / ARM64 devices
+[PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels (whl) and docker image
+for aarch64 / ARMv8 / ARM64 devices
 
 [中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
 
@@ -81,6 +82,12 @@ Similarly, `fastbook` could be installed by:
 | <= 0.6.0 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
 
 ## Official PyTorch CI Builds
+> You might not be able to see the statuses.
+> 
+> ZUUL / `openlabtesting` uses HTTP API to fetch its CI statuses, but GitHub **Page** are forced HTTPS.
+> 
+> If so, you will need to visit this page via [GitHub][32].
+
 
 | py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
@@ -118,10 +125,15 @@ Similarly, `fastbook` could be installed by:
 
 ## Extra Info
 
+### FAQ
+  * **Q:** Does this run on Raspberry Pi?<br>**A: Yes**, if the architecture of the SoC is `aarch64`. It should run on all ARMv8 chips.<br> <br>
+  * **Q:** Does this support CUDA / CUDNN?<br>**A: No**. [Check here](#cuda--cudnn-support) for more information.<br> <br>
+  * **Q:** Does this run on Nvidia Jetson?<br>**A: Yes**, but extremely slow. Each Nvidia Jetson boards contains an Nvidia GPU, but this project only build cpu wheels. To better make use of your hardware, [build it yourself](build/torch.sh).<br> <br>
+
 ### About PyTorch v1.6.0
 
 A fatal bug is encountered and [this patch][24] is applied while building PyTorch v1.6.0.
-After that, `whl` files can be successfully built under every Python version.
+The patch has been merged into mainstream in later versions.
 
 ### About TorchText
 
