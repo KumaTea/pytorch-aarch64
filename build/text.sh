@@ -8,7 +8,7 @@ export BUILD_VERSION="$VER"
 git clone https://github.com/pytorch/text || :
 
 cd audio
-git checkout "v$VER"
+git checkout --recurse-submodules "v$VER"
 git submodule sync
 git submodule update --init --recursive
 

@@ -8,7 +8,7 @@ export BUILD_VERSION="$VER"
 git clone https://github.com/pytorch/vision || :
 
 cd vision
-git checkout "v$VER"
+git checkout --recurse-submodules "v$VER"
 git submodule sync
 git submodule update --init --recursive
 

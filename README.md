@@ -13,7 +13,7 @@ Run:
 Add `torchvision`, `torchaudio`, `torchtext` and other packages if you need.
 
 Note: this command installs the latest version.
-For choosing a specific version, please check the [Corresponding Versions](#corresponding-versions) section.
+For choosing a specific version, please check the [Custom Builds](#custom-builds) section.
 
 To pick the `whl` files manually, check the **[releases][16]**.
 
@@ -41,45 +41,25 @@ Similarly, `fastbook` could be installed by:
 
 ## Custom Builds
 
-### PyTorch
-
-| py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
-| :---: | :---: | :---: | :---: | :---: |
-| 1.8.0 | | | | |
-| 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 1.6.0 <a href="#about-pytorch-v160"><sup>[i]</sup></a> | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
-| <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
-
-### `torchvision`
-* All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
-
-| ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
+| `torch` | `torchvision` | `torchaudio` | `torchtext` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 0.8.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 0.8.0 / 0.8.1 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.7.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
-| <= 0.6.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
+| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | [![passing][2]][18] | `>=3.6` |
+| `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | [![running][6]][12] | `>=3.6` |
+| `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | [![running][6]][10] | `>=3.6` |
+| `1.5.1` | `0.6.1` | `0.5.0` | `0.6.0` | [![running][6]][35] | `>=3.5` |
+| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | [![running][6]][36] | `>=3.5` |
+| `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | [![running][6]][37] | `==2.7`, `>=3.5`, `<=3.8` |
+| `1.3.1` | `0.4.2` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.3.0` | `0.4.1` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.2.0` | `0.4.0` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.1.0` | `0.3.0` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `<=1.0.1` | `0.2.2` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
 
-### `torchaudio`
-* All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
-
-| ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 0.7.2 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 0.7.0 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.6.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
-| <= 0.5.1 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
-
-### `torchtext` <a href="#about-torchtext"><sup>[i]</sup></a>
-* All wheels will be built with the [Corresponding `torch` Versions](#corresponding-versions).
-
-| ver | `torch` | 3.6 | 3.7 | 3.8 | 3.9 |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 0.8.1 | 1.7.1 | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] | [![passing][2]][18] |
-| 0.8.0 | 1.7.0 | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] | [![passing][2]][12] |
-| 0.7.0 | 1.6.0 | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] | [![passing][2]][10] |
-| <= 0.6.0 | <= 1.5.0 | ![canceled][15] | ![canceled][15] | ![canceled][15] | ![canceled][15] |
+### Corresponding Versions
+* [Corresponding `torch` and `torchvision` versions][13]
+* [Corresponding `torch` and `torchaudio` versions][14]
+* [Corresponding `torch` and `torchtext` versions][29]
 
 ## Official PyTorch CI Builds
 > You might not be able to see the statuses.
@@ -89,7 +69,7 @@ Similarly, `fastbook` could be installed by:
 > If so, you will need to visit this page via [GitHub][32].
 
 
-| py / ver | 3.6 | 3.7 | 3.8 | 3.9 |
+| py <br> ver | 3.6 | 3.7 | 3.8 | 3.9 |
 | :---: | :---: | :---: | :---: | :---: |
 | master | [![Build Status][7]][19] | [![Build Status][9]][19] | [![Build Status][11]][19] | |
 | 1.8.0 | | | | |
@@ -101,29 +81,7 @@ Similarly, `fastbook` could be installed by:
 
 ---
 
-### Corresponding Versions
-* [Corresponding `torch` and `torchvision` versions][13]
-* [Corresponding `torch` and `torchaudio` versions][14]
-* [Corresponding `torch` and `torchtext` versions][29]
-
-| `torch` | `torchvision` | `torchaudio` | `torchtext` | `python` |
-| :---: | :---: | :---: | :---: | :---: |
-| `master` / `nightly` | `master` / `nightly` | `master` / `nightly` | `master` / `nightly` | `>=3.6` |
-| `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `>=3.6` |
-| `1.7.0` | `0.8.0` / `0.8.1` | `0.7.0` | `0.8.0` | `>=3.6` |
-| `1.6.0` | `0.7.0` | `0.6.0` | `0.7.0` | `>=3.6` |
-| `1.5.1` | `0.6.1` | `0.5.0` | `0.6.0` | `>=3.5` |
-| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | `>=3.5` |
-| `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | `==2.7`, `>=3.5`, `<=3.8` |
-| `1.3.1` | `0.4.2` | | | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.3.0` | `0.4.1` | | | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.2.0` | `0.4.0` | | | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.1.0` | `0.3.0` | | | `==2.7`, `>=3.5`, `<=3.7` |
-| `<=1.0.1` | `0.2.2` | | | `==2.7`, `>=3.5`, `<=3.7` |
-
----
-
-## Extra Info
+## More Info
 
 ### FAQ
   * **Q:** Does this run on Raspberry Pi?<br>**A: Yes**, if the architecture of the SoC is `aarch64`. It should run on all ARMv8 chips.<br> <br>
@@ -161,9 +119,6 @@ If you need it, please use an [Nvidia Jetson][30] board to run the [building cod
 > GCC: v8.3.0
 > 
 > Virtualization: **Docker**
-
-Note: wheels, which version is less or equal to 1.7.0, are built using Ubuntu 20.04.1 Focal LTS.
-It won't run on Debian Buster since the GCC version, v9.3.0, is too new.
 
 ### Performance
 
@@ -218,3 +173,7 @@ Note:
 [32]: https://github.com/KumaTea/pytorch-aarch64
 [33]: https://torch.maku.ml/
 [34]: https://hub.docker.com/r/kumatea/pytorch
+[35]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.1
+[36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0
+[37]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.1
+[38]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0

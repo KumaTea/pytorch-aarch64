@@ -9,7 +9,7 @@ export PYTORCH_BUILD_NUMBER="1"
 git clone https://github.com/pytorch/pytorch torch || :
 
 cd torch
-git checkout "v$VER"
+git checkout --recurse-submodules "v$VER"
 git submodule sync
 git submodule update --init --recursive
 
