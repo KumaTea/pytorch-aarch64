@@ -6,24 +6,12 @@ VER="1.7.1"
 export PYTORCH_BUILD_VERSION="$VER"
 export PYTORCH_BUILD_NUMBER="1"
 
-cd ~
-mkdir pytorch || :
-cd pytorch
-
-git clone https://github.com/pytorch/pytorch torch
+git clone https://github.com/pytorch/pytorch torch || :
 
 cd torch
 git checkout "v$VER"
 git submodule sync
 git submodule update --init --recursive
-
-# apt update
-# apt install -y build-essential cmake
-# pip install ninja
-
-# cp version.txt version.txt.bak
-# (echo "$VER" | sed 's/v//g') > version.txt
-# echo "$VER" > version.txt
 
 export MAX_JOBS=1
 export BUILD_TEST=0
