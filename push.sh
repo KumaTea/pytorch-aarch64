@@ -2,7 +2,7 @@
 
 set -e
 
-echo "$DOCKER_PASSWORD" | docker login -u "KumaTea" --password-stdin
+echo "$DOCKERPASS" | docker login -u "kumatea" --password-stdin
 
 set -xe
 
