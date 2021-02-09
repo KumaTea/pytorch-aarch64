@@ -1,4 +1,5 @@
-arch: arm64-graviton2
+os: linux
+arch: arm64
 dist: focal
 services:
   - docker
