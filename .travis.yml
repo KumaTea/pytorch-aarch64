@@ -1,13 +1,9 @@
 arch: arm64-graviton2
-language: c
-compiler: gcc
-
+dist: focal
 services:
   - docker
 
-before_install:
-  - apt update
-  - apt upgrade -y
+before_install: bash check_arch.sh
 
 install: bash pull.sh
 
