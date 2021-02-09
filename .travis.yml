@@ -1,0 +1,20 @@
+arch: arm64-graviton2
+language: c
+compiler: gcc
+
+services:
+  - docker
+
+before_install:
+  - apt update
+  - apt upgrade -y
+
+install: bash pull.sh
+
+script: bash build_env.sh
+
+deploy:
+  provider: script
+  script: bash push.sh
+  on:
+    branch: ci-env
