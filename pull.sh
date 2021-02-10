@@ -2,7 +2,7 @@
 
 set -xe
 
-docker pull python:3.9
-docker pull python:3.8
-docker pull python:3.7
-docker pull python:3.6
+docker pull kumatea/build:py39-ci
+docker pull kumatea/build:py38-ci
+docker pull kumatea/build:py37-ci
+docker pull kumatea/build:py36-ci
