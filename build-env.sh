@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -xe
+
+cd py39
+docker build --pull -t kumatea/build:py39 .
+cd ..
+
+cd py38
+docker build --pull -t kumatea/build:py38 .
+cd ..
+
+cd py37
+docker build --pull -t kumatea/build:py37 .
+cd ..
+
+cd py36
+docker build --pull -t kumatea/build:py36 .
+cd ..
+
+

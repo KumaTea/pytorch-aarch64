@@ -6,14 +6,14 @@ dist: focal
 services:
   - docker
 
-before_install: bash check_arch.sh
+before_install: bash check-arch.sh
 
 install: bash pull.sh
 
-script: bash build_env.sh
+script: bash ci-build-env.sh
 
 deploy:
   provider: script
-  script: bash push.sh
+  script: bash ci-push.sh
   on:
-    branch: ci-env
+    branch: env
