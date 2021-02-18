@@ -8,7 +8,7 @@ services:
 
 before_install: bash check-arch.sh
 
-install: bash pull.sh
+install: bash ci-pull.sh
 
 script: bash ci-build-env.sh
 
