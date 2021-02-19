@@ -4,7 +4,7 @@ RUN set -xe \
         \
         && apt update \
         && apt install -y bash ca-certificates libffi-dev libssl-dev xz-utils zlib1g-dev liblzma-dev libjpeg-dev libpng-dev sox libsox-dev \
-        && rm -rf /var/lib/apt/lists/*
+        && rm -rf /var/lib/apt/lists/* \
         && python3 -m pip install -U pip setuptools wheel \
         && rm -rf /root/.cache/*
 
