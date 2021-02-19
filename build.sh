@@ -8,9 +8,9 @@ cd docker
 cd "py$PYVER"
 
 if [ "$PYVER" == "39" ]; then
-    docker build -t kumatea/pytorch:1.7.1 -t "kumatea/pytorch:1.7.1-py$PYVER" -t "kumatea/pytorch:$PYVER" .
+    docker build -t kumatea/pytorch:1.7.1 -t "kumatea/pytorch:1.7.1-py$PYVER" -t "kumatea/pytorch:py$PYVER" .
 else
-    docker build -t "kumatea/pytorch:1.7.1-py$PYVER" -t "kumatea/pytorch:$PYVER" .
+    docker build -t "kumatea/pytorch:1.7.1-py$PYVER" -t "kumatea/pytorch:py$PYVER" .
 fi
 
 if [ "$PYVER" == "39" ]; then
@@ -19,4 +19,4 @@ if [ "$PYVER" == "39" ]; then
 fi
 
 docker build -f full.Dockerfile -t "kumatea/pytorch:1.7.1-py$PYVER-full" .
-docker build -f full.Dockerfile -t "kumatea/pytorch:$PYVER-full" .
+docker build -f full.Dockerfile -t "kumatea/pytorch:py$PYVER-full" .

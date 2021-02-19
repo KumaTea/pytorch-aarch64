@@ -18,6 +18,6 @@ if [ "$PYVER" == "39" ]; then
 fi
 
 docker push "kumatea/pytorch:1.7.1-py$PYVER"
-docker push "kumatea/pytorch:$PYVER"
+docker push "kumatea/pytorch:py$PYVER"
 docker push "kumatea/pytorch:1.7.1-py$PYVER-full"
-docker push "kumatea/pytorch:$PYVER-full"
+docker push "kumatea/pytorch:py$PYVER-full"
