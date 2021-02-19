@@ -1,0 +1,21 @@
+os: linux
+arch: arm64
+dist: focal
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
+
+before_install:
+  - bash test/check-arch.sh
+  - sudo apt update
+  - sudo apt install -y libjpeg-dev libpng-dev sox libsox-dev libsox-fmt-all
+
+install:
+  - python3 -m pip install -U pip setuptools wheel
+  - pip install torch torchvision torchaudio torchtext -f https://torch.maku.ml/whl/stable.html
+
+script:
+  - python3 test/torch-test.py

@@ -1,5 +1,5 @@
-from os.path import basename
 import requests
+from os.path import basename
 from urllib.parse import quote_plus, urlparse
 
 

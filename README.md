@@ -6,8 +6,6 @@ for aarch64 / ARMv8 / ARM64 devices
 
 ## Install
 
-Run:
-
 **`pip install torch -f https://torch.maku.ml/whl/stable.html`**
 
 Add `torchvision`, `torchaudio`, `torchtext` and other packages if you need.
@@ -44,12 +42,13 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.8.0` | | | | | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | [![passing][2]][18] | `>=3.6` |
-| `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | [![running][6]][12] | `>=3.6` |
-| `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | [![running][6]][10] | `>=3.6` |
-| `1.5.1` | `0.6.1` | `0.5.0` | `0.6.0` | [![running][6]][35] | `>=3.5` |
-| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | [![running][6]][36] | `>=3.5` |
-| `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | [![running][6]][37] | `==2.7`, `>=3.5`, `<=3.8` |
+| `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | [![passing][2]][12] | `>=3.6` |
+| `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | [![passing][2]][10] | `>=3.6` |
+| `1.5.1` | `0.6.1` | `0.5.1` | `0.6.0` | [![passing][2]][35] | `>=3.5` |
+| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | [![passing][2]][36] | `>=3.5` |
+| `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | [![passing][2]][37] | `==2.7`, `>=3.5`, `<=3.8` |
 | `1.3.1` | `0.4.2` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
 | `1.3.0` | `0.4.1` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
 | `1.2.0` | `0.4.0` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
@@ -64,9 +63,9 @@ Similarly, `fastbook` could be installed by:
 ## Official PyTorch CI Builds
 > You might not be able to see the statuses.
 > 
-> ZUUL / `openlabtesting` uses HTTP API to fetch its CI statuses, but GitHub **Page** are forced HTTPS.
+> ZUUL / `openlabtesting` uses HTTP API to fetch its CI statuses, but GitHub **Pages** are forced HTTPS.
 > 
-> If so, you will need to visit this page via [GitHub][32].
+> If so, you will need to visit this page via [GitHub][39].
 
 
 | py <br> ver | 3.6 | 3.7 | 3.8 | 3.9 |
@@ -128,11 +127,11 @@ Test date: 2020-12-25
 
 | Platform | Specs | Task | Avg. Time | Version |
 | :---: | :---: | :---: | :---: | :---: |
-| `aarch64` | ARM Cortex-A53 | Image Prediction | **41,264.514 ms** | `1.7.1` / `3.8.5` |
-| `aarch64` | QUALCOMM Snapdragon 845 | Image Prediction | 9,763.317 ms | `1.7.1` / `3.8.5` |
-| `amd64` | INTEL Core i7-6500U | Image Prediction | 374.274 ms | `1.7.1+cpu` / `3.8.6` |
-| Google Colab | INTEL Xeon ??? / NVIDIA Tesla T4 | Image Prediction | 314.650 ms | `1.7.1+cu101` / `3.6.9` |
-| Kaggle | INTEL Xeon ??? / NVIDIA Tesla P100 | Image Prediction | 307.503 ms | `1.7.1+cu110` / `3.7.6` |
+| `aarch64` | ARM Cortex-A53 | Image Prediction | **41,264.514 ms** | `1.7.1` <br> `3.8.5` |
+| `aarch64` | QUALCOMM Snapdragon 845 | Image Prediction | 9,763.317 ms | `1.7.1` <br> `3.8.5` |
+| `amd64` | INTEL Core i7-6500U | Image Prediction | 374.274 ms | `1.7.1+cpu` <br> `3.8.6` |
+| Google Colab | INTEL Xeon ??? <br> NVIDIA Tesla T4 | Image Prediction | 314.650 ms | `1.7.1+cu101` <br> `3.6.9` |
+| Kaggle | INTEL Xeon ??? <br> NVIDIA Tesla P100 | Image Prediction | 307.503 ms | `1.7.1+cu110` <br>`3.7.6` |
 
 Note:
 1. This test was done by using a same _Cat or Dog_ model, to predict 10 random animal images (while same for each group).
@@ -177,3 +176,4 @@ Note:
 [36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0
 [37]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.1
 [38]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
+[39]: https://github.com/KumaTea/pytorch-aarch64#official-pytorch-ci-builds
