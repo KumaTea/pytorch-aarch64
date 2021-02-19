@@ -6,8 +6,8 @@ bash check-arch.sh
 
 bash pull.sh
 
-bash build-env-ci.sh
+bash build-env.sh
 
-bash push-ci.sh
+bash push.sh
 
 bash cleanup.sh
