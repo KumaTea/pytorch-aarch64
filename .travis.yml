@@ -22,7 +22,7 @@ before_install:
 
 install:
   - bash build.sh "$PYVER"
-  - bash test.sh
+  - bash test.sh "$PYVER"
 
 script:
-  - bash push.sh
+  - bash push.sh "$PYVER"
