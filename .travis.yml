@@ -15,6 +15,7 @@ before_install:
 
 install:
   - python3 -m pip install -U pip setuptools wheel
+  - pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm
   - pip install torch torchvision torchaudio torchtext -f https://torch.maku.ml/whl/stable.html
 
 script:
