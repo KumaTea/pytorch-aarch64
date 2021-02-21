@@ -1,4 +1,7 @@
 # pytorch-aarch64
+
+[![Build Status][40]][41]
+
 [PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels (whl) and docker image
 for aarch64 / ARMv8 / ARM64 devices
 
@@ -177,3 +180,5 @@ Note:
 [37]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.1
 [38]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
 [39]: https://github.com/KumaTea/pytorch-aarch64#official-pytorch-ci-builds
+[40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
+[41]: https://travis-ci.org/KumaTea/pytorch-aarch64
