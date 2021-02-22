@@ -2,7 +2,7 @@
 
 [![Build Status][40]][41]
 
-[PyTorch][20], [torchvision][21], [torchaudio][22] and [torchtext][28] wheels (whl) and docker image
+[PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42] wheels (whl) and docker image
 for aarch64 / ARMv8 / ARM64 devices
 
 [中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
@@ -42,21 +42,21 @@ Similarly, `fastbook` could be installed by:
 
 ## Custom Builds
 
-| `torch` | `torchvision` | `torchaudio` | `torchtext` | Status | `python` |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
-| `1.8.0` | | | | | `>=3.6` |
-| `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | [![passing][2]][18] | `>=3.6` |
-| `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | [![passing][2]][12] | `>=3.6` |
-| `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | [![passing][2]][10] | `>=3.6` |
-| `1.5.1` | `0.6.1` | `0.5.1` | `0.6.0` | [![passing][2]][35] | `>=3.5` |
-| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | [![passing][2]][36] | `>=3.5` |
-| `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | [![passing][2]][37] | `==2.7`, `>=3.5`, `<=3.8` |
-| `1.3.1` | `0.4.2` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.3.0` | `0.4.1` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.2.0` | `0.4.0` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.1.0` | `0.3.0` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `<=1.0.1` | `0.2.2` | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.8.0` | | | | | | `>=3.6` |
+| `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
+| `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | `0.1.3` | [![passing][2]][12] | `>=3.6` |
+| `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | `0.1.2` <br> `0.1.1` <br> `0.1.0` | [![passing][2]][10] | `>=3.6` |
+| `1.5.1` | `0.6.1` | `0.5.1` | `0.6.0` | | [![passing][2]][35] | `>=3.5` |
+| `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | | [![passing][2]][36] | `>=3.5` |
+| `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | | [![passing][2]][37] | `==2.7`, `>=3.5`, `<=3.8` |
+| `1.3.1` | `0.4.2` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.3.0` | `0.4.1` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.2.0` | `0.4.0` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.1.0` | `0.3.0` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `<=1.0.1` | `0.2.2` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
 
 ### Corresponding Versions
 * [Corresponding `torch` and `torchvision` versions][13]
@@ -94,6 +94,14 @@ Similarly, `fastbook` could be installed by:
 
 A fatal bug is encountered and [this patch][24] is applied while building PyTorch v1.6.0.
 The patch has been merged into mainstream in later versions.
+
+### `RuntimeError` while importing
+
+If you see something like this when `import torch`:
+
+`RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd`
+
+Please upgrade your `numpy` version: `pip install -U numpy`.
 
 ### About TorchText
 
@@ -182,3 +190,4 @@ Note:
 [39]: https://github.com/KumaTea/pytorch-aarch64#official-pytorch-ci-builds
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
+[42]: https://github.com/pytorch/csprng

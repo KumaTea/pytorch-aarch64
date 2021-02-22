@@ -1,5 +1,5 @@
 # pytorch-aarch64
-[PyTorch][20]、[torchvision][21]、[torchaudio][22] 和 [torchtext][28] 的安装包 (whl) ，适用于 aarch64 / ARMv8 / ARM64 设备
+[PyTorch][20]、[torchvision][21]、[torchaudio][22] [torchtext][28] 和 [torchcsprng][42] 的安装包 (whl) ，适用于 aarch64 / ARMv8 / ARM64 设备
 
 [English](README.md) ([for GitHub][32]) | [Gitee][31] | [Web][33]
 
@@ -42,19 +42,6 @@
 
 ## 附加信息
 
-### 关于 PyTorch v1.6.0
-
-在编译 PyTorch v1.6.0 时，遇到了一个致命 bug，因此应用了 [此补丁][24]。
-除此之外，`whl` 文件可以在所有其他 Python 版本下成功构建。
-
-### 关于 TorchText
-
-你可以从 PyPI (`pip`) 安装到的最新 `torchtext` 版本是 [`0.6.0`][17]，即 `torchtext-0.6.0-py3-none-any.whl`。
-这是最后一个适用于所有设备的官方版本。
-
-从那以后，新的版本和其余项目一样，只为 `x86_64` / `amd64` 编译。
-然而 `torchtext` 的 `0.6.0` 版本尽管已过时，但仍比其他项目的停更版本更新。
-
 ### CUDA / CUDNN 支持
 
 由于编译环境（见下）不包含 Nvidia GPU，无法支持 cuda 。
@@ -70,9 +57,6 @@
 > 操作系统：Debian Buster
 > 
 > 虚拟化：**Docker**
-
-注：版本小于或等于1.7.0的 wheel 二进制文件是使用 Ubuntu 20.04.1 Focal LTS 编译的。
-由于 GCC 版本太新 (v9.3.0) 不能在 Debian Buster 上运行。
 
 ### 性能
 
@@ -127,3 +111,11 @@
 [32]: https://github.com/KumaTea/pytorch-aarch64
 [33]: https://torch.maku.ml/
 [34]: https://hub.docker.com/r/kumatea/pytorch
+[35]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.1
+[36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0
+[37]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.1
+[38]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
+[39]: https://github.com/KumaTea/pytorch-aarch64#official-pytorch-ci-builds
+[40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
+[41]: https://travis-ci.org/KumaTea/pytorch-aarch64
+[42]: https://github.com/pytorch/csprng
