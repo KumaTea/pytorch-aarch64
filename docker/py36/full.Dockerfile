@@ -15,7 +15,7 @@ RUN set -xe \
 
 RUN set -xe \
         \
-        && python3 -m pip install -U torchvision torchaudio torchtext -f https://torch.maku.ml/whl/stable.html \
+        && python3 -m pip install -U torchvision torchaudio torchtext torchcsprng -f https://torch.maku.ml/whl/stable.html \
         && rm -rf /root/.cache/*
 
 CMD ["python3"]
