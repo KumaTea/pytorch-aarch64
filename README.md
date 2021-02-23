@@ -1,4 +1,4 @@
 # pytorch-aarch64
-## ci-env
+## env
 
-Building Docker image for building environment via CI
+[Docker images](https://hub.docker.com/r/kumatea/build) for building environment

@@ -3,7 +3,7 @@
 set -xe
 
 cd py39
-docker build --pull -t kumatea/build:py39 .
+docker build --pull -t kumatea/build:py39 -t kumatea/build:latest .
 cd ..
 
 cd py38
@@ -17,5 +17,3 @@ cd ..
 cd py36
 docker build --pull -t kumatea/build:py36 .
 cd ..
-
-

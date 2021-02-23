@@ -13,7 +13,7 @@ RUN set -e \
 RUN set -e \
         \
         && python3.7 -m pip install -U pip setuptools wheel \
-        && python3.7 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm\
+        && python3.7 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm \
         && rm -rf /root/.cache/*
 
 # COPY . .
