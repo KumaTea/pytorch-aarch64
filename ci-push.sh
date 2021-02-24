@@ -10,3 +10,5 @@ docker push kumatea/build:py39-ci
 docker push kumatea/build:py38-ci
 docker push kumatea/build:py37-ci
 docker push kumatea/build:py36-ci
+docker push kumatea/build:pypy37-ci
+docker push kumatea/build:pypy36-ci

@@ -18,4 +18,10 @@ cd py36
 docker build --pull -t kumatea/build:py36-ci .
 cd ..
 
+cd pypy37
+docker build --pull -t kumatea/build:pypy37-ci .
+cd ..
 
+cd pypy36
+docker build --pull -t kumatea/build:pypy36-ci .
+cd ..
