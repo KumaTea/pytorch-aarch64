@@ -1,6 +1,7 @@
 # pytorch-aarch64
 
 [![Build Status][40]][41]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKumaTea%2Fpytorch-aarch64.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKumaTea%2Fpytorch-aarch64?ref=badge_shield)
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42] wheels (whl) and docker image
 for aarch64 / ARMv8 / ARM64 devices
@@ -191,3 +192,7 @@ Note:
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKumaTea%2Fpytorch-aarch64.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FKumaTea%2Fpytorch-aarch64?ref=badge_large)
