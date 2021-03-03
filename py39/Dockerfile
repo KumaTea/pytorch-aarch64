@@ -1,8 +1,5 @@
 FROM python:3.9
 
-ENV DEBIAN_FRONTEND=noninteractive
-# tzdata
-
 RUN set -ex \
         \
         && echo "cd /root" >> /root/.bashrc \
@@ -13,7 +10,7 @@ RUN set -ex \
 RUN set -ex \
         \
         && python3.9 -m pip install -U pip setuptools wheel \
-        && python3.9 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm \
+        && python3.9 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.maku.ml/wheels.html \
         && rm -rf /root/.cache/*
 
 # COPY . .
