@@ -46,7 +46,7 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
-| `1.8.0` | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | ![running][6] | `>=3.6` |
+| `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | ![running][6] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
 | `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | `0.1.3` | [![passing][2]][12] | `>=3.6` |
 | `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | `0.1.2` <br> `0.1.1` <br> `0.1.0` | [![passing][2]][10] | `>=3.6` |
@@ -91,6 +91,12 @@ Similarly, `fastbook` could be installed by:
   * **Q:** Does this support CUDA / CUDNN?<br>**A: No**. [Check here](#cuda--cudnn-support) for more information.<br> <br>
   * **Q:** Does this run on Nvidia Jetson?<br>**A: Yes**, but extremely slow. Each Nvidia Jetson boards contains an Nvidia GPU, but this project only build cpu wheels. To better make use of your hardware, [build it yourself](build/torch.sh).<br> <br>
 
+### About PyTorch v1.8.0
+
+Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
+
+This project will focus on building other non-prebuilt packages.
+
 ### About PyTorch v1.6.0
 
 A fatal bug is encountered and [this patch][24] is applied while building PyTorch v1.6.0.
@@ -103,14 +109,6 @@ If you see something like this when `import torch`:
 `RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd`
 
 Please upgrade your `numpy` version: `pip install -U numpy`.
-
-### About TorchText
-
-The latest `torchtext` version you can install from PyPI (`pip`) is [`0.6.0`][17], namely `torchtext-0.6.0-py3-none-any.whl`,
-is the last official version that is available for all devices.
-
-From that on, the newer version are only built for `x86_64` / `amd64`, like other projects.
-However, for `torchtext`, version `0.6.0` is deprecated but significantly more recent than the dropped versions of other projects.
 
 ### CUDA / CUDNN Support
 
