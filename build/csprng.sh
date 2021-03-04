@@ -6,9 +6,9 @@ VER="$1"
 export BUILD_VERSION="$VER"
 
 
-git clone https://github.com/pytorch/audio || :
+git clone https://github.com/pytorch/csprng || :
 
-cd audio
+cd csprng
 git checkout "$2"
 git checkout --recurse-submodules "$2"
 git submodule sync

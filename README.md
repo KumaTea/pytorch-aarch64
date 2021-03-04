@@ -1,9 +1,10 @@
 # pytorch-aarch64
 
-[![Build Status][40]][41]
+[![Build Status][40]][41] [![Coverage][43]][16]
 
-[PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42] wheels (whl) and docker image
-for aarch64 / ARMv8 / ARM64 devices
+[PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
+wheels (whl) and docker images
+for **`aarch64` / ARMv8 / ARM64** devices
 
 [中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
 
@@ -11,14 +12,14 @@ for aarch64 / ARMv8 / ARM64 devices
 
 **`pip install torch -f https://torch.maku.ml/whl/stable.html`**
 
-Add `torchvision`, `torchaudio`, `torchtext` and other packages if you need.
+Add `torchvision`, `torchaudio`, `torchtext`, `torchcsprng` and other packages if you need.
 
-Note: this command installs the latest version.
-For choosing a specific version, please check the [Custom Builds](#custom-builds) section.
+> Note: this command installs the latest version.
+> For choosing a specific version, please check the [Custom Builds](#custom-builds) section.
 
-To pick the `whl` files manually, check the **[releases][16]**.
+To pick the `whl` files manually, please check the **[releases][16]**.
 
-## Docker
+## [Docker][34]
 
 **`docker run -it kumatea/pytorch`**
 
@@ -45,7 +46,7 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
-| `1.8.0` | | | | | | `>=3.6` |
+| `1.8.0` | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | ![running][6] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
 | `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | `0.1.3` | [![passing][2]][12] | `>=3.6` |
 | `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | `0.1.2` <br> `0.1.1` <br> `0.1.0` | [![passing][2]][10] | `>=3.6` |
@@ -191,3 +192,4 @@ Note:
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
+[43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
