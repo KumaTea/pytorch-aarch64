@@ -1,4 +1,7 @@
 # pytorch-aarch64
+
+[![Build Status][40]][41] [![Coverage][43]][16]
+
 [PyTorch][20]、[torchvision][21]、[torchaudio][22] [torchtext][28] 和 [torchcsprng][42] 的安装包 (whl) ，适用于 aarch64 / ARMv8 / ARM64 设备
 
 [English](README.md) ([for GitHub][32]) | [Gitee][31] | [Web][33]
@@ -7,14 +10,16 @@
 
 运行：
 
-**`pip install torch -f https://torch.maku.ml/whl/stable.html`**
+**`pip install torch -f https://cf.torch.maku.ml/whl/stable.html`**
 
-如有需要，添加 `torchvision` 、 `torchaudio` 、 `torchtext` 等包。
+备用链接：`pip install torch -f https://torch.maku.ml/whl/stable.html`
+
+如有需要，添加 `torchvision` `torchaudio` `torchtext` `torchcsprng` 等包。
 
 注意：此命令安装的是最新版本。
 要选择特定的版本，请查看 [对应版本](README.md#corresponding-versions) 部分。
 
-如果要手动选择`whl`文件，请查看 **[release][16]** 。
+如果需要手动选择`whl`文件，请查看 **[release][16]** 。
 
 ## Docker
 
@@ -30,13 +35,13 @@
 它推荐用 `conda` 安装，但没有针对 `aarch64` 的 [Anaconda][26] 。
 所以，用以下方法安装 `fastai` 。
 
-`pip install fastai -f https://torch.maku.ml/whl/stable.html`
+`pip install fastai -f https://cf.torch.maku.ml/whl/stable.html`
 
 `torch` 和 `torchvision` 将作为依赖自动安装。
 
 同样，`fastbook` 也可以用以下方法安装。
 
-`pip install fastbook -f https://torch.maku.ml/whl/stable.html`
+`pip install fastbook -f https://cf.torch.maku.ml/whl/stable.html`
 
 ---
 
@@ -57,25 +62,6 @@
 > 操作系统：Debian Buster
 > 
 > 虚拟化：**Docker**
-
-### 性能
-
-测试日期：2020-12-25
-
-> 执行时间越少越好
-
-| 平台 | 规格 | 任务 | 平均时间 | 版本 |
-| :---: | :---: | :---: | :---: | :---: |
-| `aarch64` | ARM Cortex-A53 | Image Prediction | **41,264.514 ms** | `1.7.1` / `3.8.5` |
-| `aarch64` | QUALCOMM Snapdragon 845 | Image Prediction | 9,763.317 ms | `1.7.1` / `3.8.5` |
-| `amd64` | INTEL Core i7-6500U | Image Prediction | 374.274 ms | `1.7.1+cpu` / `3.8.6` |
-| Google Colab | INTEL Xeon ??? / NVIDIA Tesla T4 | Image Prediction | 314.650 ms | `1.7.1+cu101` / `3.6.9` |
-| Kaggle | INTEL Xeon ??? / NVIDIA Tesla P100 | Image Prediction | 307.503 ms | `1.7.1+cu110` / `3.7.6` |
-
-注：
-1. 这个测试是通过使用相同的 _猫或狗_ 模型，来预测10个随机的动物图像（同时每组相同）。
-2. 所有平台都手动安装了最新版本的PyTorch，但驱动和Python仍然是默认的。
-
 
 [1]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.4.0
 [2]: https://img.shields.io/badge/build-passing-brightgreen
@@ -119,3 +105,4 @@
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
+[43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue

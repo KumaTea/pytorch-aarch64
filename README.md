@@ -12,6 +12,8 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 **`pip install torch -f https://torch.maku.ml/whl/stable.html`**
 
+Backup link: `pip install torch -f https://cf.torch.maku.ml/whl/stable.html`
+
 Add `torchvision`, `torchaudio`, `torchtext`, `torchcsprng` and other packages if you need.
 
 > Note: this command installs the latest version.
