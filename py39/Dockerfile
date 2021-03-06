@@ -9,8 +9,20 @@ RUN set -ex \
 
 RUN set -ex \
         \
-        && python3.9 -m pip install -U pip setuptools wheel \
-        && python3.9 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.maku.ml/wheels.html \
+        && cd /root \
+        && wget http://ffmpeg.org/releases/ffmpeg-4.3.2.tar.xz \
+        && tar -xJf ffmpeg-4.3.2.tar.xz \
+        && cd ffmpeg-4.3.2 \
+        && ./configure \
+        && make \
+        && make install \
+        && cd /root \
+        && rm -rf ffmpeg-4.3.2 ffmpeg-4.3.2.tar.xz
+
+RUN set -ex \
+        \
+        && python3 -m pip install -U pip setuptools wheel \
+        && python3 -m pip install -U cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.maku.ml/wheels.html \
         && rm -rf /root/.cache/*
 
 # COPY . .

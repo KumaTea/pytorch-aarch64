@@ -8,6 +8,6 @@ bash pull.sh
 
 bash build-env.sh
 
-# bash push.sh
+bash push.sh
 
 bash cleanup.sh
