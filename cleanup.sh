@@ -2,5 +2,5 @@
 
 set -xe
 
-docker rmi "$(docker images --filter dangling=true -q --no-trunc)"
+docker rmi "$(docker images --filter dangling=true -q --no-trunc)" || :
 # https://stackoverflow.com/questions/32723111
