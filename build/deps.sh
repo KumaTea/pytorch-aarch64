@@ -1,4 +1,4 @@
 set -xe
 
 apt update
-apt install sox libsox-dev ffmpeg libjpeg-dev libpng-dev
+apt install libjpeg-dev libpng-dev
