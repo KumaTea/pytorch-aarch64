@@ -13,8 +13,8 @@ RUN set -ex \
         && wget http://ffmpeg.org/releases/ffmpeg-4.3.2.tar.xz \
         && tar -xJf ffmpeg-4.3.2.tar.xz \
         && cd ffmpeg-4.3.2 \
-        && ./configure \
-        && make \
+        && ./configure --enable-shared \
+        && make -j$(nproc) \
         && make install \
         && cd /root \
         && rm -rf ffmpeg-4.3.2 ffmpeg-4.3.2.tar.xz

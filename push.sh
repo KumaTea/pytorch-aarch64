@@ -7,5 +7,5 @@ docker push kumatea/build:latest
 docker push kumatea/build:py38
 docker push kumatea/build:py37
 docker push kumatea/build:py36
-docker push kumatea/build:pypy37
-docker push kumatea/build:pypy36
+# docker push kumatea/build:pypy37
+# docker push kumatea/build:pypy36
