@@ -1,39 +1,22 @@
 import requests
-from os.path import basename
-from urllib.parse import quote_plus, urlparse
+from urllib.parse import quote_plus
 
 
 author = 'KumaTea'
 project = 'pytorch-aarch64'
+project_arm = 'pytorch-arm'
 whl_dir = '../whl'
 rl_file = 'stable.html'
-ci_file = 'ci.html'
+pf_file = 'pfml.html'
 pt = 'pytorch'
-pt_ci_index = './pt_ci.json'  # pytorch official CI builds
-gh_rl_index = './gh_rl.json'  # GitHub released wheels
-pt_ci_api = f'https://status.openlabtesting.org/builds/api/builds?&project={pt}/{pt}'  # job_name
-gh_rl_api = f'https://api.github.com/repos/{author}/{project}/releases'
+gh_rl_api = 'https://api.github.com/repos/{author}/{project}/releases'
+v180_and_above = ['torch-1.8.0']
 
 
-def get_pt_ci():
-    print('Fetching PyTorch CI builds...')
-    assets = []
-    jobs = []
-    result_raw = requests.get(pt_ci_api).json()
-    for release in result_raw:
-        if release['job_name'] not in jobs and release['result'] == 'SUCCESS':
-            jobs.append(release['job_name'])
-            assets.append({
-                'name': basename(urlparse(release['artifacts'][0]['url']).path),
-                'url': release['artifacts'][0]['url']
-            })
-    return assets
-
-
-def get_gh_rl():
+def get_gh_rl(author_name, project_name):
     print('Fetching GitHub releases...')
     assets = []
-    result_raw = requests.get(gh_rl_api).json()
+    result_raw = requests.get(gh_rl_api.format(author=author_name, project=project_name)).json()
     for release in result_raw:
         if release['assets']:
             for binary in release['assets']:
@@ -46,20 +29,30 @@ def get_gh_rl():
 
 
 def gen_index():
-    rl_list = get_gh_rl()
-    # ci_list = get_pt_ci()
-    print('Generating html...')
-    rl_html = ''
-    # ci_html = ''
-    for file in rl_list:
-        rl_html += '<a href=\"' + file['url'] + '\">' + \
-                   quote_plus(file['name']) + '</a><br>\n'
+    html = ''
+    pf_html = ''
+    for task in [project, project_arm]:
+        print('Processing:', task)
+        process_180 = True
+        if 'aarch64' not in task:
+            process_180 = False
+
+        rl_list = get_gh_rl(author, task)
+        rl_html = ''
+        pf_rl_html = ''
+        for file in rl_list:
+            whl_index = '<a href=\"' + file['url'] + '\">' + quote_plus(file['name']) + '</a><br>\n'
+            rl_html += whl_index
+            skip = False
+            for item in v180_and_above:
+                if item in file['name']:
+                    skip = True
+            if not skip:
+                pf_rl_html += whl_index
+        html += rl_html
+        pf_html += pf_rl_html
+
     with open(f'{whl_dir}/{rl_file}', 'w', encoding='utf-8') as html_file:
-        html_file.write(rl_html)
-    """
-    for file in ci_list:
-        ci_html += '<a href=\"' + file['url'] + '\">' + \
-                   quote_plus(file['name']) + '</a><br>\n'
-    with open(f'{whl_dir}/{ci_file}', 'w', encoding='utf-8') as html_file:
-        html_file.write(ci_html)
-    """
+        html_file.write(html)
+    with open(f'{whl_dir}/{pf_file}', 'w', encoding='utf-8') as html_file:
+        html_file.write(pf_html)

@@ -1,6 +1,6 @@
 # pytorch-aarch64
 
-[![Build Status][40]][41] [![Coverage][43]][16]
+[![Build Status][40]][41] [![Coverage][43]][16] [![ARM][44]][45]
 
 [PyTorch][20]、[torchvision][21]、[torchaudio][22] [torchtext][28] 和 [torchcsprng][42] 的安装包 (whl) ，适用于 aarch64 / ARMv8 / ARM64 设备
 
@@ -106,3 +106,6 @@
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
 [43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
+[44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
+[45]: https://github.com/KumaTea/pytorch-arm
+[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0

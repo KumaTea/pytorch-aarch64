@@ -1,12 +1,12 @@
 # pytorch-aarch64
 
-[![Build Status][40]][41] [![Coverage][43]][16]
+[![Build Status][40]][41] [![Coverage][43]][16] [![ARM][44]][45]
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
 wheels (whl) and docker images
 for **`aarch64` / ARMv8 / ARM64** devices
 
-[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
+[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33] | [ARMv7][45]
 
 ## Install
 
@@ -48,7 +48,7 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
-| `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | ![running][6] | `>=3.6` |
+| `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
 | `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | `0.1.3` | [![passing][2]][12] | `>=3.6` |
 | `1.6.0` <a href="#about-pytorch-v160"><sup>[i]</sup></a> | `0.7.0` | `0.6.0` | `0.7.0` | `0.1.2` <br> `0.1.1` <br> `0.1.0` | [![passing][2]][10] | `>=3.6` |
@@ -95,9 +95,9 @@ Similarly, `fastbook` could be installed by:
 
 ### About PyTorch v1.8.0
 
-Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
-
-This project will focus on building other non-prebuilt packages.
+* Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
+  * To use the official wheels, use this index link: <br> **`https://torch.maku.ml/whl/pfml.html`** <br> where `pfml` stands for `prefer-manylinux` here.
+* `torchaudio` cannot be successfully built on all platforms with all versions of Python.
 
 ### About PyTorch v1.6.0
 
@@ -193,3 +193,6 @@ Note:
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
 [43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
+[44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
+[45]: https://github.com/KumaTea/pytorch-arm
+[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
