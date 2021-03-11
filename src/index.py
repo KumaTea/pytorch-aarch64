@@ -30,12 +30,9 @@ def get_gh_rl(author_name, project_name):
 
 def gen_index():
     html = ''
-    pf_html = ''
+
     for task in [project, project_arm]:
         print('Processing:', task)
-        process_180 = True
-        if 'aarch64' not in task:
-            process_180 = False
 
         rl_list = get_gh_rl(author, task)
         rl_html = ''
@@ -43,16 +40,7 @@ def gen_index():
         for file in rl_list:
             whl_index = '<a href=\"' + file['url'] + '\">' + quote_plus(file['name']) + '</a><br>\n'
             rl_html += whl_index
-            skip = False
-            for item in v180_and_above:
-                if item in file['name']:
-                    skip = True
-            if not skip:
-                pf_rl_html += whl_index
         html += rl_html
-        pf_html += pf_rl_html
 
     with open(f'{whl_dir}/{rl_file}', 'w', encoding='utf-8') as html_file:
         html_file.write(html)
-    with open(f'{whl_dir}/{pf_file}', 'w', encoding='utf-8') as html_file:
-        html_file.write(pf_html)
