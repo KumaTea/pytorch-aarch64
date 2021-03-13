@@ -97,7 +97,7 @@ Similarly, `fastbook` could be installed by:
 
 * Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
   * ~~To use the official wheels, use this index link: <br> **`https://torch.maku.ml/whl/pfml.html`** <br> where `pfml` stands for `prefer-manylinux` here.~~ <br> `manylinux` wheels will be installed by default.
-* `torchvision` wheels are built with `ffmpeg` support. For wheels without it, please install `torchvision==0.9.0+slim`
+* `torchvision` wheels are built with [FFmpeg][47] support. For wheels without it, please install `torchvision==0.9.0+slim`
 * `torchaudio` cannot be successfully built on all platforms with all versions of Python yet.
 
 ### About PyTorch v1.6.0
@@ -183,7 +183,7 @@ Note:
 [30]: https://developer.nvidia.com/embedded/jetson-developer-kits
 [31]: https://gitee.com/kumatea/pytorch-aarch64
 [32]: https://github.com/KumaTea/pytorch-aarch64
-[33]: https://torch.maku.ml/
+[33]: https://torch.maku.ml
 [34]: https://hub.docker.com/r/kumatea/pytorch
 [35]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.1
 [36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0
@@ -197,3 +197,4 @@ Note:
 [44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
 [45]: https://github.com/KumaTea/pytorch-arm
 [46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
+[47]: https://www.ffmpeg.org
