@@ -15,6 +15,8 @@ RUN set -xe \
 
 RUN set -xe \
         \
+        && apt update \
+        && apt install -y libjpeg-dev libpng-dev sox libsox-dev libsox-fmt-all
         && python3 -m pip install -U torchvision torchaudio torchtext torchcsprng -f https://torch.maku.ml/whl/stable.html \
         && rm -rf /root/.cache/*
 
