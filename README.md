@@ -98,7 +98,6 @@ Similarly, `fastbook` could be installed by:
 * Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
   * ~~To use the official wheels, use this index link: <br> **`https://torch.maku.ml/whl/pfml.html`** <br> where `pfml` stands for `prefer-manylinux` here.~~ <br> `manylinux` wheels will be installed by default.
 * `torchvision` wheels are built with [FFmpeg][47] support. For wheels without it, please install `torchvision==0.9.0+slim`
-* `torchaudio` cannot be successfully built on all platforms with all versions of Python yet.
 
 ### About PyTorch v1.6.0
 
@@ -122,7 +121,9 @@ If you need it, please use an [Nvidia Jetson][30] board to run the [building cod
 
 ### Building Environment
 
-> SoC: [Allwinner H6][23] (quad-core A53)
+> Host: Raspberry Pi 4 Model B
+> 
+> SoC: BCM2835 (quad-core A53)
 > 
 > Architecture: ARMv8 / ARM64 / `aarch64`
 > 
