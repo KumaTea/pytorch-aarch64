@@ -48,6 +48,7 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.8.1` | `0.9.1` <a href="#about-torchvision-v091"><sup>[i]</sup></a> | `0.8.1` | `0.9.1` | `0.2.1` | [![passing][2]][48] | `>=3.6` |
 | `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
 | `1.7.0` | `0.8.1` <br> `0.8.0` | `0.7.0` | `0.8.0` | `0.1.3` | [![passing][2]][12] | `>=3.6` |
@@ -103,6 +104,13 @@ Similarly, `fastbook` could be installed by:
 
 A fatal bug is encountered and [this patch][24] is applied while building PyTorch v1.6.0.
 The patch has been merged into mainstream in later versions.
+
+### About `torchvision` v0.9.1
+
+Starting from `torchvision` v0.9.1,
+`manylinux` wheels are officially provided via both [its indexes][49] and PyPI.
+However, since they do not contain necessary backends (< 1MB) and may require extra installations,
+this project will continue to build `torchvision` wheels.
 
 ### `RuntimeError` while importing
 
@@ -197,5 +205,7 @@ Note:
 [43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
 [44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
 [45]: https://github.com/KumaTea/pytorch-arm
-[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
+[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.0
 [47]: https://www.ffmpeg.org
+[48]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.1
+[49]: https://download.pytorch.org/whl/torch_stable.html
