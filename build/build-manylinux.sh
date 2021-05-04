@@ -4,24 +4,26 @@
 
 set -xe
 
-echo "Building PyTorch"
+# Preparation
 
-bash deps.sh
+ln -s /usr/bin/ninja-build /usr/bin/ninja || :
+export CC=/opt/rh/devtoolset-9/root/usr/bin/gcc
+export CPP=/opt/rh/devtoolset-9/root/usr/bin/g++
+export GCC=/opt/rh/devtoolset-9/root/usr/bin/gcc
+export CXX=/opt/rh/devtoolset-9/root/usr/bin/g++
 
-pip install -U torch -f https://download.pytorch.org/whl/torch_stable.html -f https://ext.maku.ml/wheels.html
+git clone https://github.com/glennrp/libpng || :
+cd libpng
+git checkout v1.6.37
+./configure --enable-shared
+make "-j$(nproc)"
+make install
+cd ..
 
-cp -a vision vision-bak || :
-export USE_FFMPEG=1
-bash vision.sh "0.9.1" "v0.9.1"
+# Build
 
-bash audio.sh "0.8.1" "v0.8.1" || bash audio.sh "0.8.1" "v0.8.1"
-# Yes, run twice. I don't know why, but it just works.
+cd py39
+bash build-manylinux-whl.sh "/opt/python/cp39-cp39/bin/" "/opt/_internal/cpython-3.9.2/lib/python3.9/site-packages/torch/lib"
+cd ..
 
-bash text.sh "0.9.1" "v0.9.1-rc1"
-bash csprng.sh "0.2.1" "v0.2.1"
 
-# pip uninstall -y torchvision
-# mv vision vision-built
-# mv vision-bak vision || :
-# export USE_FFMPEG=0
-# bash vision.sh "0.9.1+slim" "v0.9.1"

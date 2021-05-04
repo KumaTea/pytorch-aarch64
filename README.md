@@ -131,7 +131,7 @@ If you need it, please use an [Nvidia Jetson][30] board to run the [building cod
 
 > Host: Raspberry Pi 4 Model B
 > 
-> SoC: BCM2835 (quad-core A53)
+> SoC: BCM2711 (quad-core A53)
 > 
 > Architecture: ARMv8 / ARM64 / `aarch64`
 > 
