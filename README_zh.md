@@ -10,9 +10,9 @@
 
 运行：
 
-**`pip install torch -f https://cf.torch.maku.ml/whl/stable.html`**
+**`pip install torch -f https://cf.torch.maku.ml/whl/stable-cn.html`**
 
-备用链接：`pip install torch -f https://torch.maku.ml/whl/stable.html`
+备用链接：`pip install torch -f https://torch.maku.ml/whl/stable-cn.html`
 
 如有需要，添加 `torchvision` `torchaudio` `torchtext` `torchcsprng` 等包。
 
