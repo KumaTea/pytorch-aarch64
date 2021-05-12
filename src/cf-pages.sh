@@ -2,10 +2,10 @@
 
 set -ex
 
-wget -E -r -k -p "https://torch.maku.ml/"
-cp -rf torch.maku.ml/* .
-rm -rf torch.maku.ml
+wget -E -r -k -p "https://torch.kmtea.eu/"
+cp -rf torch.kmtea.eu/* .
+rm -rf torch.kmtea.eu
 
 mkdir whl || :
-wget "https://torch.maku.ml/whl/stable.html" -O whl/stable.html
-wget "https://torch.maku.ml/whl/stable-cn.html" -O whl/stable-cn.html
+wget "https://torch.kmtea.eu/whl/stable.html" -O whl/stable.html
+wget "https://torch.kmtea.eu/whl/stable-cn.html" -O whl/stable-cn.html

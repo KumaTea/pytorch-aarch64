@@ -10,9 +10,9 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 ## Install
 
-**`pip install torch -f https://torch.maku.ml/whl/stable.html`**
+**`pip install torch -f https://torch.kmtea.eu/whl/stable.html`**
 
-Backup link: `pip install torch -f https://cf.torch.maku.ml/whl/stable.html`
+Backup link: `pip install torch -f https://cf.torch.kmtea.eu/whl/stable.html`
 
 (For user in China, please use [the CDN](README_zh.md#安装))
 
@@ -37,13 +37,13 @@ To check all available tags, [click here][34].
 It recommends installing by `conda`, but there is no [Anaconda][26] builds for `aarch64`.
 So, install `fastai` by:
 
-`pip install fastai -f https://torch.maku.ml/whl/stable.html`
+`pip install fastai -f https://torch.kmtea.eu/whl/stable.html`
 
 `torch` and `torchvision` will be installed as dependencies automatically.
 
 Similarly, `fastbook` could be installed by:
 
-`pip install fastbook -f https://torch.maku.ml/whl/stable.html`
+`pip install fastbook -f https://torch.kmtea.eu/whl/stable.html`
 
 ## Custom Builds
 
@@ -99,7 +99,7 @@ Similarly, `fastbook` could be installed by:
 ### About PyTorch v1.8.0
 
 * Starting from v1.8.0, the **official** wheels of PyTorch for `aarch64` has finally released!
-  * ~~To use the official wheels, use this index link: <br> **`https://torch.maku.ml/whl/pfml.html`** <br> where `pfml` stands for `prefer-manylinux` here.~~ <br> `manylinux` wheels will be installed by default.
+  * ~~To use the official wheels, use this index link: <br> **`https://torch.kmtea.eu/whl/pfml.html`** <br> where `pfml` stands for `prefer-manylinux` here.~~ <br> `manylinux` wheels will be installed by default.
 * `torchvision` wheels are built with [FFmpeg][47] support. For wheels without it, please install `torchvision==0.9.0+slim`
 
 ### About PyTorch v1.6.0
@@ -194,7 +194,7 @@ Note:
 [30]: https://developer.nvidia.com/embedded/jetson-developer-kits
 [31]: https://gitee.com/kumatea/pytorch-aarch64
 [32]: https://github.com/KumaTea/pytorch-aarch64
-[33]: https://torch.maku.ml
+[33]: https://torch.kmtea.eu
 [34]: https://hub.docker.com/r/kumatea/pytorch
 [35]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.1
 [36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0

@@ -29,7 +29,7 @@ cp config.guess "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/amr/" || mkd
 cp config.guess "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/lame/" || mkdir -p "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/lame" && cp config.guess "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/lame/"
 cp config.guess "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/ogg/" || mkdir -p "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/ogg" && cp config.guess "build/temp.linux-$ARCH-$PY_VER/third_party/sox/src/ogg/"
 rm config.guess
-z
+
 python3 setup.py build
 python3 setup.py install
 python3 setup.py bdist_wheel

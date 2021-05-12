@@ -10,9 +10,9 @@
 
 运行：
 
-**`pip install torch -f https://cf.torch.maku.ml/whl/stable-cn.html`**
+**`pip install torch -f https://cf.torch.kmtea.eu/whl/stable-cn.html`**
 
-备用链接：`pip install torch -f https://torch.maku.ml/whl/stable-cn.html`
+备用链接：`pip install torch -f https://torch.kmtea.eu/whl/stable-cn.html`
 
 如有需要，添加 `torchvision` `torchaudio` `torchtext` `torchcsprng` 等包。
 
@@ -35,13 +35,13 @@
 它推荐用 `conda` 安装，但没有针对 `aarch64` 的 [Anaconda][26] 。
 所以，用以下方法安装 `fastai` 。
 
-`pip install fastai -f https://cf.torch.maku.ml/whl/stable.html`
+`pip install fastai -f https://cf.torch.kmtea.eu/whl/stable.html`
 
 `torch` 和 `torchvision` 将作为依赖自动安装。
 
 同样，`fastbook` 也可以用以下方法安装。
 
-`pip install fastbook -f https://cf.torch.maku.ml/whl/stable.html`
+`pip install fastbook -f https://cf.torch.kmtea.eu/whl/stable.html`
 
 ---
 
@@ -95,7 +95,7 @@
 [30]: https://developer.nvidia.com/embedded/jetson-developer-kits
 [31]: https://gitee.com/kumatea/pytorch-aarch64
 [32]: https://github.com/KumaTea/pytorch-aarch64
-[33]: https://torch.maku.ml/
+[33]: https://torch.kmtea.eu/
 [34]: https://hub.docker.com/r/kumatea/pytorch
 [35]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.1
 [36]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.5.0
