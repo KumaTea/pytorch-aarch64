@@ -1,12 +1,12 @@
 # pytorch-aarch64
 
-[![Build Status][40]][41] [![Coverage][43]][16] [![ARM][44]][45]
+[![Build Status][40]][41] [![Coverage][43]][16]
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
 wheels (whl) and docker images
 for **`aarch64` / ARMv8 / ARM64** devices
 
-[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33] | [ARMv7][45]
+[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
 
 ## Install
 
@@ -49,7 +49,8 @@ Similarly, `fastbook` could be installed by:
 
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
+| `1.9.0` | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][36] | `>=3.6` |
 | `1.8.1` | `0.9.1` <a href="#about-torchvision-v091"><sup>[i]</sup></a> | `0.8.1` | `0.9.1` | `0.2.1` | [![passing][2]][48] | `>=3.6` |
 | `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
@@ -95,6 +96,15 @@ Similarly, `fastbook` could be installed by:
   * **Q:** Does this run on Raspberry Pi?<br>**A: Yes**, if the architecture of the SoC is `aarch64`. It should run on all ARMv8 chips.<br> <br>
   * **Q:** Does this support CUDA / CUDNN?<br>**A: No**. [Check here](#cuda--cudnn-support) for more information.<br> <br>
   * **Q:** Does this run on Nvidia Jetson?<br>**A: Yes**, but extremely slow. Each Nvidia Jetson boards contains an Nvidia GPU, but this project only build cpu wheels. To better make use of your hardware, [build it yourself](build/torch.sh).<br> <br>
+
+### About Python v3.10
+
+By the time this change (v1.9.0) is committed, NONE of the stable version of
+Python 3.10.0,
+Numpy 1.21.0 (which adds Python 3.10 support), or
+PyTorch 1.9.0 for Python 3.10 has been released.
+
+If any critical issue is found, I may rebuild the wheel after stable releases.
 
 ### About PyTorch v1.8.0
 
@@ -204,7 +214,7 @@ Note:
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
-[43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
+[43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
 [44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
 [45]: https://github.com/KumaTea/pytorch-arm
 [46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.0
