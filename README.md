@@ -1,6 +1,6 @@
 # pytorch-aarch64
 
-[![Build Status][40]][41] [![Coverage][43]][16]
+[![Build Status][50]][51] [![Coverage][43]][16]
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
 wheels (whl) and docker images
@@ -221,3 +221,5 @@ Note:
 [47]: https://www.ffmpeg.org
 [48]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.1
 [49]: https://download.pytorch.org/whl/torch_stable.html
+[50]: https://circleci.com/gh/KumaTea/pytorch-aarch64.svg?style=svg
+[51]: https://circleci.com/gh/KumaTea/pytorch-aarch64

@@ -1,0 +1,63 @@
+version: 2.1
+
+jobs:
+#  py310:
+#    machine:
+#      image: ubuntu-2004:202104-01
+#    resource_class: arm.medium
+#    steps:
+#      - run: |
+#          git clone https://github.com/KumaTea/pytorch-aarch64
+#          cd pytorch-aarch64
+#          sudo bash test/test.sh python3.10
+
+  py39:
+    machine:
+      image: ubuntu-2004:202104-01
+    resource_class: arm.medium
+    steps:
+      - run: |
+          sudo apt update
+          git clone https://github.com/KumaTea/pytorch-aarch64
+          cd pytorch-aarch64
+          sudo bash test/test.sh python3.9
+
+  py38:
+    machine:
+      image: ubuntu-2004:202104-01
+    resource_class: arm.medium
+    steps:
+      - run: |
+          git clone https://github.com/KumaTea/pytorch-aarch64
+          cd pytorch-aarch64
+          sudo bash test/test.sh python3.8
+
+  py37:
+    machine:
+      image: ubuntu-2004:202104-01
+    resource_class: arm.medium
+    steps:
+      - run: |
+          git clone https://github.com/KumaTea/pytorch-aarch64
+          cd pytorch-aarch64
+          sudo bash test/test.sh python3.7
+
+
+  py36:
+    machine:
+      image: ubuntu-2004:202104-01
+    resource_class: arm.medium
+    steps:
+      - run: |
+          git clone https://github.com/KumaTea/pytorch-aarch64
+          cd pytorch-aarch64
+          sudo bash test/test.sh python3.6
+
+workflows:
+  build:
+    jobs:
+#      - py310
+      - py39
+      - py38
+      - py37
+      - py36
