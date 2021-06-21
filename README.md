@@ -14,7 +14,7 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 Backup link: `pip install torch -f https://cf.torch.kmtea.eu/whl/stable.html`
 
-(For user in China, please use [the CDN](README_zh.md#安装))
+(For users in China, please use [the CDN](README_zh.md#安装))
 
 Add `torchvision`, `torchaudio`, `torchtext`, `torchcsprng` and other packages if you need.
 
@@ -49,8 +49,8 @@ Similarly, `fastbook` could be installed by:
 
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
-| `1.9.0` | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][36] | `>=3.6` |
+| `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.9.0` | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][52] | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
 | `1.8.1` | `0.9.1` <a href="#about-torchvision-v091"><sup>[i]</sup></a> | `0.8.1` | `0.9.1` | `0.2.1` | [![passing][2]][48] | `>=3.6` |
 | `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
@@ -97,7 +97,7 @@ Similarly, `fastbook` could be installed by:
   * **Q:** Does this support CUDA / CUDNN?<br>**A: No**. [Check here](#cuda--cudnn-support) for more information.<br> <br>
   * **Q:** Does this run on Nvidia Jetson?<br>**A: Yes**, but extremely slow. Each Nvidia Jetson boards contains an Nvidia GPU, but this project only build cpu wheels. To better make use of your hardware, [build it yourself](build/torch.sh).<br> <br>
 
-### About Python v3.10
+### About Python 3.10
 
 By the time this change (v1.9.0) is committed, NONE of the stable version of
 Python 3.10.0,
@@ -223,3 +223,4 @@ Note:
 [49]: https://download.pytorch.org/whl/torch_stable.html
 [50]: https://circleci.com/gh/KumaTea/pytorch-aarch64.svg?style=svg
 [51]: https://circleci.com/gh/KumaTea/pytorch-aarch64
+[52]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.9.0
