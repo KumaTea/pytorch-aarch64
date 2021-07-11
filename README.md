@@ -50,7 +50,7 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
-| `1.9.0` | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][52] | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
+| `1.9.0`<a href="#difference-from-the-official-wheels"><sup>[i]</sup></a> | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][52] | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
 | `1.8.1` | `0.9.1` <a href="#about-torchvision-v091"><sup>[i]</sup></a> | `0.8.1` | `0.9.1` | `0.2.1` | [![passing][2]][48] | `>=3.6` |
 | `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
 | `1.7.1` | `0.8.2` | `0.7.2` | `0.8.1` | `0.1.4` | [![passing][2]][18] | `>=3.6` |
@@ -59,34 +59,16 @@ Similarly, `fastbook` could be installed by:
 | `1.5.1` | `0.6.1` | `0.5.1` | `0.6.0` | | [![passing][2]][35] | `>=3.5` |
 | `1.5.0` | `0.6.0` | `0.5.0` | `0.6.0` | | [![passing][2]][36] | `>=3.5` |
 | `1.4.1` <br> `1.4.0` | `0.5.0` | `0.4.0` | `0.5.0` | | [![passing][2]][37] | `==2.7`, `>=3.5`, `<=3.8` |
-| `1.3.1` | `0.4.2` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.3.0` | `0.4.1` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.2.0` | `0.4.0` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `1.1.0` | `0.3.0` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
-| `<=1.0.1` | `0.2.2` | | | | ![canceled][15] | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.3.1` | `0.4.2` | | | | | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.3.0` | `0.4.1` | | | | | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.2.0` | `0.4.0` | | | | | `==2.7`, `>=3.5`, `<=3.7` |
+| `1.1.0` | `0.3.0` | | | | | `==2.7`, `>=3.5`, `<=3.7` |
+| `<=1.0.1` | `0.2.2` | | | | | `==2.7`, `>=3.5`, `<=3.7` |
 
 ### Corresponding Versions
 * [Corresponding `torch` and `torchvision` versions][13]
 * [Corresponding `torch` and `torchaudio` versions][14]
 * [Corresponding `torch` and `torchtext` versions][29]
-
-## Official PyTorch CI Builds
-> You might not be able to see the statuses.
-> 
-> ZUUL / `openlabtesting` uses HTTP API to fetch its CI statuses, but GitHub **Pages** are forced HTTPS.
-> 
-> If so, you will need to visit this page via [GitHub][39].
-
-
-| py <br> ver | 3.6 | 3.7 | 3.8 | 3.9 |
-| :---: | :---: | :---: | :---: | :---: |
-| master | [![Build Status][7]][19] | [![Build Status][9]][19] | [![Build Status][11]][19] | |
-| 1.8.0 | | | | |
-| 1.7.1 | | | | |
-| 1.7.0 | | | | |
-| 1.6.0 | [![Build Status][5]][19] | | | |
-| 1.5.0 | [![Build Status][3]][19] | | | |
-| 1.4.0 | [![Build Status][1]][19] | | | |
 
 ---
 
@@ -96,6 +78,17 @@ Similarly, `fastbook` could be installed by:
   * **Q:** Does this run on Raspberry Pi?<br>**A: Yes**, if the architecture of the SoC is `aarch64`. It should run on all ARMv8 chips.<br> <br>
   * **Q:** Does this support CUDA / CUDNN?<br>**A: No**. [Check here](#cuda--cudnn-support) for more information.<br> <br>
   * **Q:** Does this run on Nvidia Jetson?<br>**A: Yes**, but extremely slow. Each Nvidia Jetson boards contains an Nvidia GPU, but this project only build cpu wheels. To better make use of your hardware, [build it yourself](build/torch.sh).<br> <br>
+
+### Difference From The Official Wheels
+
+In most circumstances, it's **recommended to just use the official** wheels,
+and it will also be installed via pip by default, even with `-f`.
+
+The wheels here are compiled from source on a rpi 4b+,
+and are for codes that crashed on official wheels,
+because of some unsupported instructions are used.
+
+Use the `torch` wheels here **only if you encounter problems** like [#8][53].
 
 ### About Python 3.10
 
@@ -224,3 +217,4 @@ Note:
 [50]: https://circleci.com/gh/KumaTea/pytorch-aarch64.svg?style=svg
 [51]: https://circleci.com/gh/KumaTea/pytorch-aarch64
 [52]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.9.0
+[53]: https://github.com/KumaTea/pytorch-aarch64/issues/8
