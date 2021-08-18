@@ -16,3 +16,6 @@ $PYVER -m pip install torch -f https://torch.kmtea.eu/whl/stable.html
 $PYVER -m pip install torchvision torchaudio torchtext -f https://torch.kmtea.eu/whl/stable.html
 # Temporarily skip torchcsprng
 $PYVER test/torch-test.py
+
+mkdir -p /tmp/artifacts/whl
+cp -a $(find /root/.cache/pip | grep whl | tr '\n' ' ') /tmp/artifacts/whl/ || echo "No new whl is built!"

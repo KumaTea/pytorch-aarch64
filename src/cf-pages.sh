@@ -2,6 +2,9 @@
 
 set -ex
 
+sleep 30
+# Wait for GitHub Pages
+
 wget -E -r -k -p "https://torch.kmtea.eu/"
 cp -rf torch.kmtea.eu/* .
 rm -rf torch.kmtea.eu
