@@ -34,7 +34,8 @@ To check all available tags, [click here][34].
 ### [FastAI][27]
 
 [FastAI][27] is a great [open-source][25] high-level deep learning framework based on PyTorch.
-It recommends installing by `conda`, but there is no [Anaconda][26] builds for `aarch64`.
+It recommends installing by `conda`~~, but there is no [Anaconda][26] builds for aarch64~~
+(yes there is, it's called [miniforge][54]).
 So, install `fastai` by:
 
 `pip install fastai -f https://torch.kmtea.eu/whl/stable.html`
@@ -218,3 +219,4 @@ Note:
 [51]: https://circleci.com/gh/KumaTea/pytorch-aarch64
 [52]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.9.0
 [53]: https://github.com/KumaTea/pytorch-aarch64/issues/8
+[54]: https://github.com/conda-forge/miniforge

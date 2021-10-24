@@ -50,4 +50,4 @@ def gen_index_cn():
     with open(f'{whl_dir}/{rl_file}', 'r', encoding='utf-8') as html_file:
         html = html_file.read()
     with open(f'{whl_dir}/stable-cn.html', 'w', encoding='utf-8') as html_file:
-        html_file.write(html.replace('https://github.com/', 'https://gh.kumatea.workers.dev/https://github.com/'))
+        html_file.write(html.replace('https://github.com/', 'https://gh.kmtea.eu/https://github.com/'))
