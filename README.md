@@ -151,17 +151,19 @@ If you need it, please use an [Nvidia Jetson][30] board to run the [building cod
 
 ### Performance
 
-Test date: 2020-12-25
+Test date: 2021-10-29
+
+Script: [bench.py](test/bench.py)
 
 > Less execution time is better
 
-| Platform | Specs | Task | Avg. Time | Version |
+| Platform | Specs | Training | Prediction | Version |
 | :---: | :---: | :---: | :---: | :---: |
-| `aarch64` | ARM Cortex-A53 | Image Prediction | **41,264.514 ms** | `1.7.1` <br> `3.8.5` |
-| `aarch64` | QUALCOMM Snapdragon 845 | Image Prediction | 9,763.317 ms | `1.7.1` <br> `3.8.5` |
-| `amd64` | INTEL Core i7-6500U | Image Prediction | 374.274 ms | `1.7.1+cpu` <br> `3.8.6` |
-| Google Colab | INTEL Xeon ??? <br> NVIDIA Tesla T4 | Image Prediction | 314.650 ms | `1.7.1+cu101` <br> `3.6.9` |
-| Kaggle | INTEL Xeon ??? <br> NVIDIA Tesla P100 | Image Prediction | 307.503 ms | `1.7.1+cu110` <br>`3.7.6` |
+| `aarch64` | BCM2711 (4x Cortex-A72) | 1:48:44 | 11,506.080 ms | `1.10.0` <br> `3.9.7` |
+| `aarch64` | QUALCOMM Snapdragon 845 | N/A | 4,821.148 ms (24x) | `1.10.0` <br> `3.9.7` |
+| `amd64` | INTEL Core i5-6267U | 162.964 s | 140.680 ms (82x) | `1.10.0+cpu` <br> `3.9.7` |
+| Google Colab | INTEL Xeon ??? <br> NVIDIA Tesla K80 | 6.400 s | 70.714 ms (163x) | `1.10.0+cu113` <br> `3.7.12` |
+| Kaggle | INTEL Xeon ??? <br> NVIDIA Tesla P100 | 6.626 s | 33.878 ms (340x) | `1.10.0+cu113` <br>`3.7.10` |
 
 Note:
 1. This test was done by using a same _Cat or Dog_ model, to predict 10 random animal images (while same for each group).
