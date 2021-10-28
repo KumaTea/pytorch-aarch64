@@ -6,7 +6,7 @@
 wheels (whl) and docker images
 for **`aarch64` / ARMv8 / ARM64** devices
 
-[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33]
+[中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33] | [TF][55]
 
 ## Install
 
@@ -51,6 +51,8 @@ Similarly, `fastbook` could be installed by:
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | `master` <br> `nightly` | | `>=3.6` |
+| `1.10.0` | `0.11.1` <br> `0.11.0` | `0.10.0` | `0.11.0` | | [![passing][2]][56] | `>=3.6` |
+| `1.9.1` | `0.10.1` | `0.9.1` | `0.10.1` | | | `>=3.6` |
 | `1.9.0`<a href="#difference-from-the-official-wheels"><sup>[i]</sup></a> | `0.10.0` | `0.9.0` | `0.10.0` | | [![passing][2]][52] | `>=3.6` <a href="#about-python-310"><sup>[i]</sup></a> |
 | `1.8.1` | `0.9.1` <a href="#about-torchvision-v091"><sup>[i]</sup></a> | `0.8.1` | `0.9.1` | `0.2.1` | [![passing][2]][48] | `>=3.6` |
 | `1.8.0` <a href="#about-pytorch-v180"><sup>[i]</sup></a> | `0.9.0` | `0.8.0` | `0.9.0` | `0.2.0` | [![passing][2]][46] | `>=3.6` |
@@ -220,3 +222,5 @@ Note:
 [52]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.9.0
 [53]: https://github.com/KumaTea/pytorch-aarch64/issues/8
 [54]: https://github.com/conda-forge/miniforge
+[55]: https://github.com/KumaTea/tensorflow-aarch64
+[56]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.10.0

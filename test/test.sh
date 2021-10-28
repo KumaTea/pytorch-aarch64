@@ -17,10 +17,13 @@ fi
 
 bash test/check-arch.sh
 
+PKGS="torch torchvision torchaudio torchtext torchcsprng"
+EXT_PKGS="fastai fastbook"
+
 $PYVER -m pip install -Uq pip setuptools wheel
-$PYVER -m pip install -q cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm  # -f https://ext.kmtea.eu/whl/stable.html
-$PYVER -m pip install -q torch -f https://torch.kmtea.eu/whl/stable.html
-$PYVER -m pip install -q torchvision torchaudio torchtext torchcsprng -f https://torch.kmtea.eu/whl/stable.html
+$PYVER -m pip install -q cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm
+$PYVER -m pip install -Uq $PKGS -f https://torch.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
+$PYVER -m pip install -Uq $EXT_PKGS -f https://torch.kmtea.eu/whl/stable.html  # -f https://ext.kmtea.eu/whl/stable.html
 $PYVER test/torch-test.py
 
 mkdir -p /tmp/artifacts/whl
