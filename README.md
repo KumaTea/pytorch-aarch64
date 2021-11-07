@@ -12,11 +12,12 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 **`pip install torch -f https://torch.kmtea.eu/whl/stable.html`**
 
-Backup link: `pip install torch -f https://cf.torch.kmtea.eu/whl/stable.html`
+Add `torchvision`, `torchaudio`, `torchtext`, `torchcsprng` and other packages if needed.
+
+Consider using [prebuilt wheels][57] to speed up installation:
+`pip install torch -f https://torch.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html`
 
 (For users in China, please use [the CDN](README_zh.md#安装))
-
-Add `torchvision`, `torchaudio`, `torchtext`, `torchcsprng` and other packages if you need.
 
 > Note: this command installs the latest version.
 > For choosing a specific version, please check the [Custom Builds](#custom-builds) section.
@@ -226,3 +227,4 @@ Note:
 [54]: https://github.com/conda-forge/miniforge
 [55]: https://github.com/KumaTea/tensorflow-aarch64
 [56]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.10.0
+[57]: https://github.com/KumaTea/ext-whl
