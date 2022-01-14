@@ -10,7 +10,7 @@ source:
 
 requirements:
   host:
-    - python
+    - python=FORMAT_PYTHON_VERSION
     - setuptools
     - pyyaml
     - typing_extensions
@@ -22,7 +22,7 @@ requirements:
 {{ environ.get('OPENSSL_PACKAGE', '') }}
 
   run:
-    - python
+    - python FORMAT_PYTHON_RANGE
     - dataclasses # [py36]
     - typing_extensions
 
@@ -36,3 +36,6 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: PyTorch is an optimized tensor library for deep learning using GPUs and CPUs.
+
+extra:
+  final: true

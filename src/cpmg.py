@@ -5,6 +5,8 @@ import shutil
 import requests
 
 
+pytorch = '1.10.0'
+
 abis = {
     'py36': 'cp36-cp36m',
     'py37': 'cp37-cp37m',
@@ -19,7 +21,19 @@ def generate_meta(python_version, pytorch_version, pytorch_dir):
     with open('meta.yaml', 'r') as f:
         meta = f.read()
 
+    python_abi = abis[python_version]
+    python_version_string = python_abi[2:python_abi.index('-')]
+    major_version = python_version_string[:1]
+    minor_version = python_version_string[1:]
+    python_version_string = f'{major_version}.{minor_version}'
+    python_version_range = f'>={python_version_string},<{major_version}.{int(minor_version) + 1}.0a0'
+
     meta = meta.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
+    meta = meta.replace('FORMAT_PYTHON_VERSION', python_version_string)
+    meta = meta.replace('FORMAT_PYTHON_RANGE', python_version_range)
+
+    if not python_version == 'py36':
+        meta = meta.replace('    - dataclasses # [py36]\n', '')
     if python_version == 'py310':
         meta = meta.replace('    - numpy=1.19', '    - numpy=1.22')
 
@@ -28,7 +42,7 @@ def generate_meta(python_version, pytorch_version, pytorch_dir):
 
 
 def generate_manifest(python_version, pytorch_version, license_content):
-    working_dir = os.path.join(conda_packages_path, abis[python_version])
+    working_dir = os.path.join(conda_packages_path, python_version)
     os.mkdir(working_dir)
     pytorch_dir = os.path.join(working_dir, 'pytorch')
     os.mkdir(pytorch_dir)
@@ -56,4 +70,4 @@ if __name__ == '__main__':
     ).text
 
     for pyv in abis:
-        generate_manifest(pyv, '1.10.0', pytorch_license_content)
+        generate_manifest(pyv, pytorch, pytorch_license_content)
