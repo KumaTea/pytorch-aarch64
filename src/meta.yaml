@@ -1,0 +1,38 @@
+{% set name = "pytorch" %}
+{% set version = "FORMAT_PYTORCH_VERSION" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  path: ../../whl
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - pyyaml
+    - typing_extensions
+    - dataclasses # [py36]
+    - ninja
+    - libuv # [unix]
+    - pkg-config # [unix]
+{{ environ.get('NUMPY_PACKAGE', '    - numpy=1.19') }}
+{{ environ.get('OPENSSL_PACKAGE', '') }}
+
+  run:
+    - python
+    - dataclasses # [py36]
+    - typing_extensions
+
+test:
+  imports:
+    - torch
+
+about:
+  home: http://pytorch.org/
+  license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: PyTorch is an optimized tensor library for deep learning using GPUs and CPUs.
