@@ -8,7 +8,14 @@
 
 ## 安装
 
-运行：
+### [conda][58] 🆕 (测试中)
+
+**`conda install -c kumatea pytorch`**
+
+现已可用:
+  * `torchvision`
+
+### pip
 
 **`pip install torch -f https://cf.torch.kmtea.eu/whl/stable-cn.html`**
 
@@ -21,7 +28,7 @@
 
 如果需要手动选择`whl`文件，请查看 **[release][16]** 。
 
-## Docker
+### Docker (即将弃用)
 
 **`docker run -it kumatea/pytorch`**
 
@@ -32,16 +39,20 @@
 ### [FastAI][27]
 
 [FastAI][27]是一个基于PyTorch的优秀[开源][25]高级深度学习框架。
-它推荐用 `conda` 安装，但没有针对 `aarch64` 的 [Anaconda][26] 。
-所以，用以下方法安装 `fastai` 。
+
+#### conda (推荐)
+
+**`conda install -c fastai -c kumatea fastai`**
+
+同样，`fastbook` 也可以用以下方法安装：
+
+`conda install -c fastai -c kumatea fastbook`
+
+#### pip
 
 `pip install fastai -f https://cf.torch.kmtea.eu/whl/stable.html`
 
 `torch` 和 `torchvision` 将作为依赖自动安装。
-
-同样，`fastbook` 也可以用以下方法安装。
-
-`pip install fastbook -f https://cf.torch.kmtea.eu/whl/stable.html`
 
 ---
 
@@ -108,4 +119,16 @@
 [43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
 [44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
 [45]: https://github.com/KumaTea/pytorch-arm
-[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.4.0
+[46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.0
+[47]: https://www.ffmpeg.org
+[48]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.1
+[49]: https://download.pytorch.org/whl/torch_stable.html
+[50]: https://circleci.com/gh/KumaTea/pytorch-aarch64.svg?style=svg
+[51]: https://circleci.com/gh/KumaTea/pytorch-aarch64
+[52]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.9.0
+[53]: https://github.com/KumaTea/pytorch-aarch64/issues/8
+[54]: https://github.com/conda-forge/miniforge
+[55]: https://github.com/KumaTea/tensorflow-aarch64
+[56]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.10.0
+[57]: https://github.com/KumaTea/ext-whl
+[58]: https://anaconda.org/kumatea/pytorch

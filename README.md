@@ -8,7 +8,18 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 [中文版](README_zh.md) ([for Gitee][31]) | [GitHub][32] | [Web][33] | [TF][55]
 
+---
+
 ## Install
+
+### [conda][58] 🆕 (WIP / Experimental)
+
+**`conda install -c kumatea pytorch`**
+
+Also available:
+  * `torchvision`
+
+### pip
 
 **`pip install torch -f https://torch.kmtea.eu/whl/stable.html`**
 
@@ -24,7 +35,7 @@ Consider using [prebuilt wheels][57] to speed up installation:
 
 To pick the `whl` files manually, please check the **[releases][16]**.
 
-## [Docker][34]
+### [Docker][34] (deprecated)
 
 **`docker run -it kumatea/pytorch`**
 
@@ -32,22 +43,32 @@ To pull the image, run `docker pull kumatea/pytorch`.
 
 To check all available tags, [click here][34].
 
+---
+
 ### [FastAI][27]
 
 [FastAI][27] is a great [open-source][25] high-level deep learning framework based on PyTorch.
-It recommends installing by `conda`~~, but there is no [Anaconda][26] builds for aarch64~~
-(yes there is, it's called [miniforge][54]).
-So, install `fastai` by:
+
+#### conda (recommended)
+
+**`conda install -c fastai -c kumatea fastai`**
+
+Similarly, `fastbook` could be installed by:
+
+`conda install -c fastai -c kumatea fastbook`
+
+#### pip
 
 `pip install fastai -f https://torch.kmtea.eu/whl/stable.html`
 
 `torch` and `torchvision` will be installed as dependencies automatically.
 
-Similarly, `fastbook` could be installed by:
-
-`pip install fastbook -f https://torch.kmtea.eu/whl/stable.html`
+---
 
 ## Custom Builds
+
+<details>
+  <summary>click to view corresponding versions</summary>
 
 | `torch` | `torchvision` | `torchaudio` | `torchtext` | `torchcsprng` | Status | `python` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -74,9 +95,14 @@ Similarly, `fastbook` could be installed by:
 * [Corresponding `torch` and `torchaudio` versions][14]
 * [Corresponding `torch` and `torchtext` versions][29]
 
+</details>
+
 ---
 
 ## More Info
+
+<details>
+  <summary>click to expand...</summary>
 
 ### FAQ
   * **Q:** Does this run on Raspberry Pi?<br>**A: Yes**, if the architecture of the SoC is `aarch64`. It should run on all ARMv8 chips.<br> <br>
@@ -170,6 +196,8 @@ Note:
 1. This test was done by using a same _Cat or Dog_ model, to predict 10 random animal images (while same for each group).
 2. The latest version of PyTorch was manually installed on all platforms, but driver and Python remained default.
 
+</details>
+
 
 [1]: http://openlabtesting.org:15000/badge?project=pytorch%2Fpytorch&job_name=pytorch-arm64-build-daily-v1.4.0
 [2]: https://img.shields.io/badge/build-passing-brightgreen
@@ -228,3 +256,4 @@ Note:
 [55]: https://github.com/KumaTea/tensorflow-aarch64
 [56]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.10.0
 [57]: https://github.com/KumaTea/ext-whl
+[58]: https://anaconda.org/kumatea/pytorch
