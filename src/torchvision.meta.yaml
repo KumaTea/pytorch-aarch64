@@ -1,0 +1,42 @@
+{% set name = "torchvision" %}
+{% set version = "FORMAT_TORCHVISION_VERSION" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  path: ../../whl
+
+requirements:
+  host:
+    - python=FORMAT_PYTHON_VERSION
+    - pytorch=FORMAT_PYTORCH_VERSION
+    - jpeg
+    - libpng
+    - pillow
+{{ environ.get('NUMPY_PACKAGE', '    - numpy=1.19') }}
+{{ environ.get('OPENSSL_PACKAGE', '') }}
+
+  run:
+    - defaults::numpy >=1.11
+    - jpeg
+    - libpng
+    - pillow >=5.3.0
+    - python FORMAT_PYTHON_RANGE
+    - pytorch FORMAT_PYTORCH_RANGE
+
+test:
+  imports:
+    - torchvision
+    - torchvision.datasets
+    - torchvision.transforms
+
+about:
+  home: https://github.com/pytorch/vision
+  license: BSD
+  license_file: LICENSE
+  summary: image and video datasets and models for torch deep learning
+
+extra:
+  final: true
