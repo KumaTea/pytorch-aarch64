@@ -5,8 +5,8 @@ import shutil
 import requests
 
 
-pytorch = '1.10.0'
-torchvision = '0.11.0'
+pytorch = '1.11.0'
+torchvision = '0.12.0'
 
 abis = {
     'py36': 'cp36-cp36m',
@@ -27,7 +27,7 @@ def process_dependencies_versions(info, py_ver):
     if not py_ver == 'py36':
         info = info.replace('    - dataclasses # [py36]\n', '')
     if py_ver == 'py310':
-        info = info.replace('    - numpy=1.19', '    - numpy=1.22')
+        info = info.replace('    - numpy 1.19', '    - numpy 1.22')
     return info
 
 
@@ -95,10 +95,13 @@ def generate_manifest(python_version, pytorch_version, torchvision_version,
     generate_torchvision_meta(python_version, torchvision_version, torchvision_dir)
 
     # build.sh
+    with open('torch.sh', 'r') as f:
+        torch_build = f.read()
+    torch_build = torch_build.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
+    torch_build = torch_build.replace('FORMAT_PYTHON_VERSION', python_version)
     with open(os.path.join(pytorch_dir, 'build.sh'), 'w') as f:
-        f.write(
-            f'$PYTHON -m pip install torch-{pytorch_version}-{abis[python_version]}-linux_aarch64.whl'
-        )
+        f.write(torch_build)
+
     with open(os.path.join(torchvision_dir, 'build.sh'), 'w') as f:
         f.write(
             f'$PYTHON -m pip install torchvision-{torchvision_version}-{abis[python_version]}-linux_aarch64.whl'

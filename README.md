@@ -14,7 +14,7 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 ### [conda][58] 🆕 (WIP / Experimental)
 
-**`conda install -c kumatea pytorch`**
+**`conda install -c kumatea numpy pytorch`**
 
 Also available:
   * `torchvision`

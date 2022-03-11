@@ -10,7 +10,7 @@
 
 ### [conda][58] 🆕 (测试中)
 
-**`conda install -c kumatea pytorch`**
+**`conda install -c kumatea numpy pytorch`**
 
 现已可用:
   * `torchvision`
