@@ -12,14 +12,25 @@ for **`aarch64` / ARMv8 / ARM64** devices
 
 ## Install
 
-### [conda][58] 🆕 (WIP / Experimental)
+### [conda][58] 🆕 (Recommended)
 
-**`conda install -c kumatea numpy pytorch`**
+**`conda install -c kumatea pytorch`**
 
-Also available:
-  * `torchvision`
+You might (or possibly will) need to install numpy:
+**`conda install -c kumatea pytorch numpy`**
+
+`cpuonly` in the official installation guide is not needed, but supported:
+**`conda install -c kumatea pytorch numpy cpuonly`**
 
 ### pip
+
+It's not recommended to use pip to install from this source.
+Instead, install from the official PyPI index:
+
+**`pip install torch`**
+
+<details>
+  <summary>Install from here...</summary>
 
 **`pip install torch -f https://torch.kmtea.eu/whl/stable.html`**
 
@@ -29,6 +40,8 @@ Consider using [prebuilt wheels][57] to speed up installation:
 `pip install torch -f https://torch.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html`
 
 (For users in China, please use [the CDN](README_zh.md#安装))
+
+</details>
 
 > Note: this command installs the latest version.
 > For choosing a specific version, please check the [Custom Builds](#custom-builds) section.
@@ -241,7 +254,7 @@ Note:
 [40]: https://travis-ci.org/KumaTea/pytorch-aarch64.svg?branch=main
 [41]: https://travis-ci.org/KumaTea/pytorch-aarch64
 [42]: https://github.com/pytorch/csprng
-[43]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
+[43]: https://shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
 [44]: https://shields.io/badge/ARM-v7%20%7C%20v8-blue
 [45]: https://github.com/KumaTea/pytorch-arm
 [46]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.8.0

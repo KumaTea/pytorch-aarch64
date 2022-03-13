@@ -14,6 +14,9 @@ abis = {
     'py38': 'cp38-cp38',
     'py39': 'cp39-cp39',
     'py310': 'cp310-cp310',
+    'pp37': 'pp37-pypy37_pp73',
+    'pp38': 'pp38-pypy38_pp73',
+    'pp39': 'pp39-pypy39_pp73',
 }
 conda_packages_path = '../conda'
 
@@ -31,7 +34,6 @@ def process_dependencies_versions(info, py_ver):
     return info
 
 
-
 def generate_pytorch_meta(py_ver, pytorch_version, pytorch_dir):
     with open('pytorch.meta.yaml', 'r') as f:
         meta = f.read()
@@ -42,6 +44,11 @@ def generate_pytorch_meta(py_ver, pytorch_version, pytorch_dir):
     minor_version = python_version[1:]
     python_version = f'{major_version}.{minor_version}'
     python_version_range = get_version_range(major_version, minor_version)
+
+    if 'pp' in py_ver:
+        meta = meta.replace('string: pyFORMAT_PYTHON_VERSION', 'string: ppFORMAT_PYTHON_VERSION')
+        meta = meta.replace('- python FORMAT_PYTHON_VERSION', '- python FORMAT_PYTHON_VERSION *_73_pypy')
+        meta = meta.replace('- python FORMAT_PYTHON_RANGE', '- python FORMAT_PYTHON_RANGE *_73_pypy')
 
     meta = meta.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
     meta = meta.replace('FORMAT_PYTHON_VERSION', python_version)
@@ -68,6 +75,11 @@ def generate_torchvision_meta(py_ver, torchvision_version, torchvision_dir):
         pytorch_version.split('.')[0],
         pytorch_version.split('.')[1]
     )
+
+    if 'pp' in py_ver:
+        meta = meta.replace('string: pyFORMAT_PYTHON_VERSION', 'string: ppFORMAT_PYTHON_VERSION')
+        meta = meta.replace('- python FORMAT_PYTHON_VERSION', '- python FORMAT_PYTHON_VERSION *_73_pypy')
+        meta = meta.replace('- python FORMAT_PYTHON_RANGE', '- python FORMAT_PYTHON_RANGE *_73_pypy')
 
     meta = meta.replace('FORMAT_TORCHVISION_VERSION', torchvision_version)
     meta = meta.replace('FORMAT_PYTHON_VERSION', python_version)
@@ -97,15 +109,18 @@ def generate_manifest(python_version, pytorch_version, torchvision_version,
     # build.sh
     with open('torch.sh', 'r') as f:
         torch_build = f.read()
-    torch_build = torch_build.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
     torch_build = torch_build.replace('FORMAT_PYTHON_VERSION', python_version)
+    torch_build = torch_build.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
     with open(os.path.join(pytorch_dir, 'build.sh'), 'w') as f:
         f.write(torch_build)
 
+    with open('vision.sh', 'r') as f:
+        vision_build = f.read()
+    vision_build = vision_build.replace('FORMAT_PYTHON_VERSION', python_version)
+    vision_build = vision_build.replace('FORMAT_PYTORCH_VERSION', pytorch_version)
+    vision_build = vision_build.replace('FORMAT_TORCHVISION_VERSION', torchvision_version)
     with open(os.path.join(torchvision_dir, 'build.sh'), 'w') as f:
-        f.write(
-            f'$PYTHON -m pip install torchvision-{torchvision_version}-{abis[python_version]}-linux_aarch64.whl'
-        )
+        f.write(vision_build)
 
     # LICENSE
     with open(os.path.join(pytorch_dir, 'LICENSE'), 'w') as f:

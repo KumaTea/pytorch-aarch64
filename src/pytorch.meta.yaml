@@ -54,7 +54,7 @@ requirements:
   run:
     - python FORMAT_PYTHON_RANGE
     - dataclasses # [py36]
-    - pytorch-mutex 1.0 cpu
+    # - pytorch-mutex 1.0 cpu
     - typing_extensions
 
 test:
