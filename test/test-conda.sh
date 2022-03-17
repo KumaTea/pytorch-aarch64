@@ -19,7 +19,7 @@ $CONDA_EXE create -n test python=$PYVER -y
 conda activate test
 
 # Install packages
-PKGS="pytorch numpy cpuonly"
+PKGS="torchvision"
 CONDA_TEST_PYTHON=/tmp/conda/envs/test/bin/python
 
 conda install $PKGS -c kumatea -y

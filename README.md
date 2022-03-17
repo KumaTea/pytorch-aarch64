@@ -1,6 +1,6 @@
 # pytorch-aarch64
 
-[![Build Status][50]][51] [![Coverage][43]][16]
+[![Build Status][50]][51] [![ver][59]][16] [![Coverage][43]][16]
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
 wheels (whl) and docker images
@@ -270,3 +270,4 @@ Note:
 [56]: https://github.com/KumaTea/pytorch-aarch64/releases/tag/v1.10.0
 [57]: https://github.com/KumaTea/ext-whl
 [58]: https://anaconda.org/kumatea/pytorch
+[59]: https://shields.io/badge/ver-1.11.0-brightgreen
