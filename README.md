@@ -1,5 +1,13 @@
 # pytorch-aarch64
 
+## Deprecation
+
+Since [v 1.8.0, PyTorch has officially provided][60] `aarch64` wheels.
+
+This project has completed its mission.
+
+---
+
 [![Build Status][50]][51] [![ver][59]][16] [![Coverage][43]][16]
 
 [PyTorch][20], [vision][21], [audio][22], [text][28] and [csprng][42]
@@ -271,3 +279,4 @@ Note:
 [57]: https://github.com/KumaTea/ext-whl
 [58]: https://anaconda.org/kumatea/pytorch
 [59]: https://shields.io/badge/ver-1.11.0-brightgreen
+[60]: https://pypi.org/project/torch/1.8.0/#files
